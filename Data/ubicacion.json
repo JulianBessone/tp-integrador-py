@@ -1,0 +1,62 @@
+[
+	{
+		"id_ubicacion": 1,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 2,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 3,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 4,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 5,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 6,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 7,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 8,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 9,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 10,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 11,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	},
+	{
+		"id_ubicacion": 12,
+		"direccion": "DireccionSinDefinir",
+		"coordenadas": "CoordenadasSinDefinir"
+	}
+]
