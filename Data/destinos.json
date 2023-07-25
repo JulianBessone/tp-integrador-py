@@ -9,7 +9,18 @@
         "popularidad": 10.00,
         "disponibilidad": true,
         "id_ubicacion": 1,
-        "imagen": "fdkena.sh/img.jpg",
+        "imagen": "fdkena.sh/img.jpg"
     },
-    
+    {
+        "id_destino": 2,
+        "nombre": "Salteñita",
+        "tipo_cocina": "Regional",
+        "ingredientes": "Carne Cortada a Cuchillo, Papa",
+        "precio_minimo": 300,
+        "precio_maximo": 400,
+        "popularidad": 8.00,
+        "disponibilidad": true,
+        "id_ubicacion": 2,
+        "imagen": "fdkena.sh/img.jpg"
+    }
 ]

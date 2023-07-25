@@ -29,7 +29,7 @@ class DestinoCulinario:
         return cls(**datos)
     
     @staticmethod
-    def cargar_reviews(archivo_json):
+    def cargar_destinos(archivo_json):
         with open(archivo_json, "r") as archivo:
             datos = json.load(archivo)
         return [DestinoCulinario.de_json(json.dumps(dato)) for dato in datos]
