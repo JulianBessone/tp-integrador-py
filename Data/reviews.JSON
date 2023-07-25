@@ -1,6 +1,6 @@
 [
     {
-        "id":1,
+        "id_review":1,
         "id_destino":1,
         "id_usuario":1,
         "calificacion":4,
@@ -8,7 +8,7 @@
         "animo": "Positivo"
     },
     {
-        "id":2,
+        "id_review":2,
         "id_destino":2,
         "id_usuario":2,
         "calificacion":3,
@@ -16,7 +16,7 @@
         "animo": "Negativo"
     },
     {
-        "id":3 ,
+        "id_review":3 ,
         "id_destino": 1,
         "id_usuario": 2,
         "calificacion": 5,
@@ -24,7 +24,7 @@
         "animo": "Positivo"
     },
     {
-        "id":4,
+        "id_review":4,
         "id_destino":3,
         "id_usuario":3,
         "calificacion":2,
@@ -32,7 +32,7 @@
         "animo": "Negativo"
     },
     {
-        "id":5,
+        "id_review":5,
         "id_destino":2,
         "id_usuario":4,
         "calificacion":4,
@@ -40,7 +40,7 @@
         "animo": "Positivo"
     },
     {
-        "id":6,
+        "id_review":6,
         "id_destino": 4,
         "id_usuario":1,
         "calificacion":1,

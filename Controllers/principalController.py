@@ -1,8 +1,8 @@
-from models.reviews import Review
+from Models.reviews import Review
 
 class ControladorPrincipal:
     def __init__(self):
-        self.reviews = Review.cargar_reviews("app/data/locales.json")
+        self.reviews = Review.cargar_reviews("data/reviews.json")
         self.marcadores = []
         self.imagenes = []
         self.cargar_reviews()
@@ -12,6 +12,3 @@ class ControladorPrincipal:
         for review in self.reviews:
             pass
 
-app = ControladorPrincipal()
-
-print(app.reviews)

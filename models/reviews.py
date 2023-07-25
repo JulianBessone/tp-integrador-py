@@ -9,8 +9,8 @@ class Review:
         self.comentario = comentario
         self.animo = animo
 
-    """ def __str__(self):
-        return f"Review {self.id}: Destino ID: {self.id_destino}, Usuario ID: {self.id_usuario}, Calificación: {self.calificacion}, Comentario: {self.comentario}, Ánimo: {self.animo}" """
+    def __str__(self):
+        return f"Review {self.id}: Destino ID: {self.id_destino}, Usuario ID: {self.id_usuario}, Calificación: {self.calificacion}, Comentario: {self.comentario}, Ánimo: {self.animo}"
     
     def a_json(self):
         return json.dumps(self.__dict__)
