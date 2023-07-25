@@ -2,6 +2,13 @@ import json
 
 class Usuario:
     def __init__(self, id_usuario, nombre, apellido, historial_rutas=None):
+        if not isinstance(id_usuario, int):
+            print('El id de usuario debe ser un numero')
+        if not isinstance(nombre, str):
+            print('El nombre no es valido, recuerda que solo debe ser una cadena de texto')
+        if not isinstance(apellido, str):
+            print('El apellido no es valido, recuerda que solo debe ser una cadena de texto')
+        
         self.id = id_usuario
         self.nombre = nombre
         self.apellido = apellido
@@ -18,7 +25,7 @@ class Usuario:
         return cls(**datos)
 
     @staticmethod
-    def cargar_reviews(archivo_json):
+    def cargar_users(archivo_json):
         with open(archivo_json, "r") as archivo:
             datos = json.load(archivo)
         return [Usuario.de_json(json.dumps(dato)) for dato in datos]

@@ -1,26 +1,148 @@
 [
     {
         "id_destino": 1,
+        "nombre": "Restaurante Italiano Bella Italia",
+        "tipo_cocina": "Italiana",
+        "ingredientes": ["Pasta", "Tomate", "Queso", "Aceite de oliva"],
+        "precio_minimo": 1500.99,
+        "precio_maximo": 3500.99,
+        "popularidad": 4.5,
+        "disponibilidad": true,
+        "id_ubicacion": 1,
+        "imagen": "https://example.com/bella_italia.jpg"
+    },
+    {
+        "id_destino": 2,
+        "nombre": "Sabores Mediterráneos",
+        "tipo_cocina": "Mediterránea",
+        "ingredientes": ["Aceitunas", "Pescado", "Aceite de oliva", "Hierbas"],
+        "precio_minimo": 1800.50,
+        "precio_maximo": 4500.00,
+        "popularidad": 4.2,
+        "disponibilidad": true,
+        "id_ubicacion": 2,
+        "imagen": "https://example.com/sabores_mediterraneos.jpg"
+    },
+    {
+        "id_destino": 3,
+        "nombre": "Comida Regional Mexicana",
+        "tipo_cocina": "Regional",
+        "ingredientes": ["Maíz", "Chiles", "Frijoles", "Aguacate"],
+        "precio_minimo": 1000.00,
+        "precio_maximo": 2500.00,
+        "popularidad": 4.8,
+        "disponibilidad": true,
+        "id_ubicacion": 3,
+        "imagen": "https://example.com/comida_regional_mexicana.jpg"
+    },
+    {
+        "id_destino": 4,
+        "nombre": "Delicias Hindúes",
+        "tipo_cocina": "Hindú",
+        "ingredientes": ["Arroz", "Curry", "Lentejas", "Cilantro"],
+        "precio_minimo": 1200.99,
+        "precio_maximo": 3000.00,
+        "popularidad": 4.6,
+        "disponibilidad": true,
+        "id_ubicacion": 4,
+        "imagen": "https://example.com/delicias_hindues.jpg"
+    },
+    {
+        "id_destino": 5,
+        "nombre": "Restaurante de Mariscos Costa Brava",
+        "tipo_cocina": "Mediterránea",
+        "ingredientes": ["Mariscos frescos", "Tomate", "Ajo", "Aceite de oliva"],
+        "precio_minimo": 2500.00,
+        "precio_maximo": 6500.00,
+        "popularidad": 4.4,
+        "disponibilidad": true,
+        "id_ubicacion": 5,
+        "imagen": "https://example.com/costa_brava.jpg"
+    },
+    {
+        "id_destino": 6,
+        "nombre": "Sabores de la Toscana",
+        "tipo_cocina": "Italiana",
+        "ingredientes": ["Aceite de oliva", "Trufas", "Vino tinto", "Pan toscano"],
+        "precio_minimo": 2000.00,
+        "precio_maximo": 5000.00,
+        "popularidad": 4.7,
+        "disponibilidad": true,
+        "id_ubicacion": 6,
+        "imagen": "https://example.com/sabores_toscana.jpg"
+    },
+    {
+        "id_destino": 7,
+        "nombre": "Gastronomía Peruana Tradicional",
+        "tipo_cocina": "Regional",
+        "ingredientes": ["Papas", "Pescados", "Ají amarillo", "Cilantro"],
+        "precio_minimo": 1500.00,
+        "precio_maximo": 4000.00,
+        "popularidad": 4.6,
+        "disponibilidad": true,
+        "id_ubicacion": 7,
+        "imagen": "https://example.com/gastronomia_peruana.jpg"
+    },
+    {
+        "id_destino": 8,
+        "nombre": "Cocina Japonesa Tradicional",
+        "tipo_cocina": "Japonesa",
+        "ingredientes": ["Sushi", "Sashimi", "Arroz", "Algas"],
+        "precio_minimo": 2200.50,
+        "precio_maximo": 6000.00,
+        "popularidad": 4.9,
+        "disponibilidad": true,
+        "id_ubicacion": 8,
+        "imagen": "https://example.com/cocina_japonesa.jpg"
+    },
+    {
+        "id_destino": 9,
+        "nombre": "Restaurante Gourmet",
+        "tipo_cocina": "Internacional",
+        "ingredientes": ["Carnes Premium", "Trufas", "Foie gras", "Vino"],
+        "precio_minimo": 5000.00,
+        "precio_maximo": 15000.00,
+        "popularidad": 4.3,
+        "disponibilidad": true,
+        "id_ubicacion": 9,
+        "imagen": "https://example.com/restaurante_gourmet.jpg"
+    },
+    {
+        "id_destino": 10,
+        "nombre": "Comida Tradicional China",
+        "tipo_cocina": "China",
+        "ingredientes": ["Arroz", "Cerdo", "Tofu", "Salsa de soja"],
+        "precio_minimo": 1200.00,
+        "precio_maximo": 3000.00,
+        "popularidad": 4.5,
+        "disponibilidad": true,
+        "id_ubicacion": 10,
+        "imagen": "https://example.com/comida_tradicional_china.jpg"
+    },
+    {
+        "id_destino": 11,
         "nombre": "El Buen Gusto",
         "tipo_cocina": "Regional",
         "ingredientes": "Carne Cortada a Cuchillo, Papa",
         "precio_minimo": 300,
         "precio_maximo": 500,
-        "popularidad": 10.00,
+        "popularidad": 5.00,
         "disponibilidad": true,
-        "id_ubicacion": 1,
+        "id_ubicacion": 11,
         "imagen": "fdkena.sh/img.jpg"
     },
     {
-        "id_destino": 2,
+        "id_destino": 12,
         "nombre": "Salteñita",
         "tipo_cocina": "Regional",
         "ingredientes": "Carne Cortada a Cuchillo, Papa",
         "precio_minimo": 300,
         "precio_maximo": 400,
-        "popularidad": 8.00,
+        "popularidad": 4.00,
         "disponibilidad": true,
-        "id_ubicacion": 2,
+        "id_ubicacion": 12,
         "imagen": "fdkena.sh/img.jpg"
     }
 ]
+
+    

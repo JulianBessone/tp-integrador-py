@@ -7,4 +7,3 @@ root.title("Food Travel")
 app = ControladorPrincipal(root)
 root.mainloop()
 
-

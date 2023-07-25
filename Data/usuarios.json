@@ -1,0 +1,32 @@
+[
+    {
+        "id_usuario": 1,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "historial_rutas": [1, 5, 2]
+    },
+    {
+        "id_usuario": 2,
+        "nombre": "María",
+        "apellido": "García",
+        "historial_rutas": [2, 6, 1, 3]
+    },
+    {
+        "id_usuario": 3,
+        "nombre": "Carlos",
+        "apellido": "López",
+        "historial_rutas": [3, 7, 2]
+    },
+    {
+        "id_usuario": 4,
+        "nombre": "Laura",
+        "apellido": "Martínez",
+        "historial_rutas": [4, 8, 3]
+    },
+    {
+        "id_usuario": 5,
+        "nombre": "Ana",
+        "apellido": "Rodríguez",
+        "historial_rutas": [1, 9, 4]
+    }
+]

@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox
+from Views.resultadosBusquedaView import ResultadosBusquedaView
 
 class InicioView:
     def __init__(self, root, destinos):
@@ -27,6 +29,7 @@ class InicioView:
         self.boton_buscar = tk.Button(self.root, text="Buscar", command=self.buscar_restaurantes)
         self.boton_buscar.pack(pady=5)
 
+     
         # Separador para mejorar la apariencia
         tk.Frame(self.root, height=2, bd=1, relief=tk.SUNKEN).pack(fill=tk.X, padx=5, pady=5)
 
@@ -53,7 +56,18 @@ class InicioView:
     def buscar_restaurantes(self):
         # Aquí puedes agregar la lógica para buscar restaurantes
         # por el término ingresado en el input.
-        pass
+        # Obtiene el término de búsqueda del input
+        termino_busqueda = self.input_buscar.get()
+
+        # Aquí puedes agregar la lógica para realizar la búsqueda utilizando el término ingresado.
+        # Por ejemplo, podrías buscar en la lista de destinos los que coincidan con el término.
+
+        # Muestra un mensaje de alerta si el término de búsqueda está vacío.
+        if not termino_busqueda:
+            messagebox.showwarning("Advertencia", "Ingresa un término de búsqueda.")
+            return
+        self.vista = ResultadosBusquedaView(self.root, self.destinos, termino_busqueda)
+
 
     def mostrar_destinos(self):
         # Aquí puedes agregar la lógica para mostrar los destinos.
