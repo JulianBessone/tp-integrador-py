@@ -1,9 +1,6 @@
 import tkinter as tk
-from Controllers.principalController import ControladorPrincipal
+from Controllers.principalController import Aplicacion
 
-
-root = tk.Tk()
-root.title("Food Travel")
-app = ControladorPrincipal(root)
-root.mainloop()
-
+"""Creo una instancia de Aplicacion, en ella se cargaran: la data, los controladores y las vistas"""
+app = Aplicacion()
+app.mainloop()
