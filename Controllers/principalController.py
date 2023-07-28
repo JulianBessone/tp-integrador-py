@@ -4,13 +4,16 @@ from tkinter import messagebox
 from Views.inicioView import InicioView
 from Views.resultadosBusquedaView import ResultadosBusquedaView
 from Views.reviewsView import ReviewsVista
+from Views.destinosView import DestinosView
 #Importación de Modelos
-from Models.reviews import Review
 from Models.destinos import DestinoCulinario
+from Models.reviews import Review
 from Models.users import Usuario
+from Models.ubicaciones import Ubicacion
 #Importación de Controladores
 from Controllers.controladorInicio import ControladorInicio
 from Controllers.controladorReview import ControladorReview
+from Controllers.controladorDestinos import ControladorDestinos
 
 class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafica
     def __init__(self):
@@ -32,12 +35,14 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         ##CONTROLADORES
         controladorInicio = ControladorInicio(self)
         controladorReview = ControladorReview(self)
+        controladorDestinos = ControladorDestinos(self)
         
         ##VISTAS
         self.vista_inicio = InicioView(self, controladorInicio, destinos)#A la vista de inicio le paso el controlador de su vista y la data de destinos.
         self.vista_resultados_busqueda = ResultadosBusquedaView(self, destinos)
+        self.vista_destinos = DestinosView(self, controladorDestinos, destinos)
         self.vista_reviews = ReviewsVista(self, controladorReview, reviews)
-  
+
 
         ##AJUSTES DE FRAMES
         self.ajustar_frame(self.vista_inicio)
@@ -51,4 +56,3 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
     #FUNCION PARA CAMBIAR LAS VIEWS
     def cambiar_frame(self, frame_destino):
         frame_destino.tkraise()
-    
