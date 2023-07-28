@@ -40,4 +40,4 @@ class ResultadosBusquedaView(tk.Frame):
             
     def volver_a_inicio(self):
         # Destruye la ventana actual (ResultadosBusquedaView) y muestra la vista anterior (InicioView)
-        self.root.destroy()
+        self.destroy()

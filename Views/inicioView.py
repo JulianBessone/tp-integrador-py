@@ -40,7 +40,7 @@ class InicioView(tk.Frame):
         self.boton_destinos = tk.Button(self, text="Destinos", command=print('hola'))
         self.boton_destinos.pack(pady=5)
 
-        self.boton_reviews = tk.Button(self, text="Reviews", command=print('hola'))
+        self.boton_reviews = tk.Button(self, text="Reviews", command= lambda: self.controlador.mostrar_reviews())
         self.boton_reviews.pack(pady=5)
 
         self.boton_planificar_visita = tk.Button(self, text="Planificar Visita", command=print('hola'))
