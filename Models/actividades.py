@@ -18,7 +18,7 @@ class Actividad:
         return cls(**datos)
     
     @staticmethod
-    def cargar_reviews(archivo_json):
+    def cargar_actividades(archivo_json):
         with open(archivo_json, "r") as archivo:
             datos = json.load(archivo)
         return [Actividad.de_json(json.dumps(dato)) for dato in datos]
