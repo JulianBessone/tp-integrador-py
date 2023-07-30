@@ -23,7 +23,7 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         self.geometry("1080x720")
         self.resizable(True, True)
         self.inicializar()
-        self.cambiar_frame(self.vista_inicio)
+        self.cambiar_frame(self.vista_inicio)       
     
     #Inicio la app
     def inicializar(self):
@@ -31,6 +31,8 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         destinos = DestinoCulinario.cargar_destinos("data/destinos.json")
         reviews = Review.cargar_reviews("data/reviews.json")
         usuarios = Usuario.cargar_users("data/usuarios.json")
+        ubicaciones = Ubicacion.cargar_ubicaciones("data/ubicacion.json")
+        self.ubicaciones = ubicaciones
 
         ##CONTROLADORES
         controladorInicio = ControladorInicio(self)
@@ -40,14 +42,15 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         ##VISTAS
         self.vista_inicio = InicioView(self, controladorInicio, destinos)#A la vista de inicio le paso el controlador de su vista y la data de destinos.
         self.vista_resultados_busqueda = ResultadosBusquedaView(self, destinos)
-        self.vista_destinos = DestinosView(self, controladorDestinos, destinos)
         self.vista_reviews = ReviewsVista(self, controladorReview, reviews)
+        self.vista_destinos = DestinosView(self, controladorDestinos, destinos, ubicaciones)
 
 
         ##AJUSTES DE FRAMES
         self.ajustar_frame(self.vista_inicio)
         self.ajustar_frame(self.vista_resultados_busqueda)
         self.ajustar_frame(self.vista_reviews)
+        self.ajustar_frame(self.vista_destinos)
 
     #FUNCION PARA AJUSTAR LOS FRAMES
     def ajustar_frame(self, frame):

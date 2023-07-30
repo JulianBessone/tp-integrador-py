@@ -103,7 +103,7 @@
 		"popularidad": 4,
 		"disponibilidad": true,
 		"id_ubicacion": 7,
-		"imagen": "assets/img/LaNuevaChina.jpg"
+		"imagen": "LaNuevaChina.jpg"
 	},
 	{
 		"id_destino": 8,
