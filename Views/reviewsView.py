@@ -1,14 +1,17 @@
 import tkinter as tk
 
 class ReviewsVista(tk.Frame):
-    def __init__(self, app, controlador, reviews):
+    def __init__(self, app, controlador, reviews, destinos, usuarios):
         super().__init__(app)
         self.app = app
         self.reviews = reviews
         self.controlador = controlador
+        self.destinos = destinos
+        self.usuarios = usuarios
+
         """AQUI CAMBIO EL TAMAÑO Y EL TITULO DE LA VENTANA"""
         self.app.title("FoodTravels App - Reseñas")
-        self.app.geometry("800x450")
+        self.app.geometry("800x850")
 
         self.create_widgets()
     
@@ -22,6 +25,18 @@ class ReviewsVista(tk.Frame):
 
         for review in self.reviews:
             """Deberias pasar por parametro la lista de destinos y luego dentro de este for buscar el destino correspondienta a id_destino del review"""
+            self.reviews_listbox.insert(tk.END, 'Calificación',review.calificacion)
+            
             self.reviews_listbox.insert(tk.END, review.comentario)
+            
+            for destino in self.destinos:
+                if(destino.id == review.id_destino):
+                    self.reviews_listbox.insert(tk.END, destino.nombre)
+            #self.reviews_listbox.insert(tk.END, review.comentario)
+            for usuario in self.usuarios:
+                if(usuario.id == review.id_usuario):
+                    self.reviews_listbox.insert(tk.END, usuario.nombre, usuario.apellido)
+            
+            self.reviews_listbox.insert(tk.END, '------------')
 
         self.reviews_listbox.pack(pady=5)

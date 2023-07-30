@@ -36,7 +36,7 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         ##VISTAS
         self.vista_inicio = InicioView(self, controladorInicio, destinos)#A la vista de inicio le paso el controlador de su vista y la data de destinos.
         self.vista_resultados_busqueda = ResultadosBusquedaView(self, destinos)
-        self.vista_reviews = ReviewsVista(self, controladorReview, reviews)
+        self.vista_reviews = ReviewsVista(self, controladorReview, reviews, destinos, usuarios)
   
 
         ##AJUSTES DE FRAMES
