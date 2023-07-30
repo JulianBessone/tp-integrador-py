@@ -33,11 +33,11 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         usuarios = Usuario.cargar_users("data/usuarios.json")
         ubicaciones = Ubicacion.cargar_ubicaciones("data/ubicacion.json")
         self.ubicaciones = ubicaciones
-
+        
         ##CONTROLADORES
         controladorInicio = ControladorInicio(self)
         controladorReview = ControladorReview(self)
-        controladorDestinos = ControladorDestinos(self)
+        controladorDestinos = ControladorDestinos(self, destinos)
         
         ##VISTAS
         self.vista_inicio = InicioView(self, controladorInicio, destinos)#A la vista de inicio le paso el controlador de su vista y la data de destinos.

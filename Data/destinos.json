@@ -19,7 +19,7 @@
 		"precio_minimo": 1399.99,
 		"precio_maximo": 4599.99,
 		"popularidad": 4.5,
-		"disponibilidad": true,
+		"disponibilidad": false,
 		"id_ubicacion": 2,
 		"imagen": "assets/img/BixiCoffeeHouses.jpg"
 	},
@@ -43,7 +43,7 @@
 		"precio_minimo": 1699.99,
 		"precio_maximo": 7999.99,
 		"popularidad": 4.5,
-		"disponibilidad": true,
+		"disponibilidad": false,
 		"id_ubicacion": 4,
 		"imagen": "assets/img/Dubai.jpg"
 	},
@@ -80,7 +80,7 @@
 		"precio_minimo": 2999.99,
 		"precio_maximo": 5999.99,
 		"popularidad": 4.5,
-		"disponibilidad": true,
+		"disponibilidad": false,
 		"id_ubicacion": 6,
 		"imagen": "assets/img/JunDu.jpg"
 	},
@@ -120,7 +120,7 @@
 		"precio_minimo": 2299.99,
 		"precio_maximo": 6999.99,
 		"popularidad": 5,
-		"disponibilidad": true,
+		"disponibilidad": false,
 		"id_ubicacion": 8,
 		"imagen": "assets/img/InBoccaAlLupoPizza.jpg"
 	},
@@ -152,7 +152,7 @@
 		"precio_minimo": 1299.99,
 		"precio_maximo": 3999.99,
 		"popularidad": 4.5,
-		"disponibilidad": true,
+		"disponibilidad": false,
 		"id_ubicacion": 10,
 		"imagen": "assets/img/NomadaSushiBar.jpg"
 	},
@@ -186,7 +186,7 @@
 		"precio_minimo": 399.99,
 		"precio_maximo": 4999.99,
 		"popularidad": 4,
-		"disponibilidad": true,
+		"disponibilidad": false,
 		"id_ubicacion": 12,
 		"imagen": "assets/img/LaNuevaMegaPeniaLaPanaderiaDelChunia.jpg"
 	}
