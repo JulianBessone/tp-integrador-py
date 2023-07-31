@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 class ReviewsVista(tk.Frame):
     def __init__(self, app, controlador, reviews, destinos, usuarios):
         super().__init__(app)
@@ -14,9 +15,8 @@ class ReviewsVista(tk.Frame):
         self.app.geometry("800x850")
 
         self.create_widgets()
-    
-    def create_widgets(self):
 
+    def create_widgets(self):
         self.label_titulo = tk.Label(self, text="Reviews", font=("Arial", 20))
         self.label_titulo.pack(pady=10)
 
@@ -25,18 +25,25 @@ class ReviewsVista(tk.Frame):
 
         for review in self.reviews:
             """Deberias pasar por parametro la lista de destinos y luego dentro de este for buscar el destino correspondienta a id_destino del review"""
-            self.reviews_listbox.insert(tk.END, 'Calificación',review.calificacion)
-            
+            self.reviews_listbox.insert(tk.END, "Calificación", review.calificacion)
+
             self.reviews_listbox.insert(tk.END, review.comentario)
-            
+
             for destino in self.destinos:
-                if(destino.id == review.id_destino):
+                if destino.id == review.id_destino:
                     self.reviews_listbox.insert(tk.END, destino.nombre)
-            #self.reviews_listbox.insert(tk.END, review.comentario)
+            # self.reviews_listbox.insert(tk.END, review.comentario)
             for usuario in self.usuarios:
-                if(usuario.id == review.id_usuario):
-                    self.reviews_listbox.insert(tk.END, usuario.nombre, usuario.apellido)
-            
-            self.reviews_listbox.insert(tk.END, '------------')
+                if usuario.id == review.id_usuario:
+                    self.reviews_listbox.insert(
+                        tk.END, usuario.nombre, usuario.apellido
+                    )
+
+            self.reviews_listbox.insert(tk.END, "------------")
 
         self.reviews_listbox.pack(pady=5)
+
+        self.create_review_button = tk.Button(
+            self, text="Agregar nueva Reseña", command=lambda: print("hola")
+        )
+        self.create_review_button.pack(pady=5, padx=5)
