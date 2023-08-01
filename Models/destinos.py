@@ -1,8 +1,7 @@
 import json
 
 class DestinoCulinario:
-    def __init__(self, id_destino, nombre, tipo_cocina, ingredientes, precio_minimo,
-                 precio_maximo, popularidad, disponibilidad, id_ubicacion, imagen):
+    def __init__(self, id_destino, nombre, tipo_cocina, ingredientes, precio_minimo, precio_maximo, popularidad, disponibilidad, id_ubicacion, imagen):
         self.id = id_destino
         self.nombre = nombre
         self.tipo_cocina = tipo_cocina
@@ -14,9 +13,8 @@ class DestinoCulinario:
         self.id_ubicacion = id_ubicacion
         self.imagen = imagen
 
-    def __str__(self):
-        return f"Destino Culinario: {self.nombre}, Tipo de cocina: {self.tipo_cocina}, " \
-               f"Popularidad: {self.popularidad}, Disponibilidad: {self.disponibilidad}"
+    #def __str__(self):
+    #    return f"Destino Culinario: {self.nombre}, Tipo de cocina: {self.tipo_cocina}, \nPopularidad: {self.popularidad}, Disponibilidad: {self.disponibilidad}" 
 
     def cambiar_disponibilidad(self, disponibilidad_nueva):
         self.disponibilidad = disponibilidad_nueva

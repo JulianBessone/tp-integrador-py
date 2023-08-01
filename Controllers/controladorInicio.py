@@ -6,10 +6,10 @@ class ControladorInicio:
         self.app = app
 
     def mostrar_destinos(self):
-        self.app.cambiar_frame(self.app.vista_destinos)        
+        self.app.cambiar_frame(self.app.vista_destinos)
 
     def mostrar_actividades(self):
-        self.app.cambiar_frame(self.app.vista_actividades)  
+        self.app.cambiar_frame(self.app.vista_actividades)
 
     def mostrar_reviews(self):
         self.app.cambiar_frame(self.app.vista_reviews)
