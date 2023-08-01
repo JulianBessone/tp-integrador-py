@@ -9,6 +9,7 @@ from tkintermapview import TkinterMapView
 
 #Importamos Image y ImageTk de la libreria PIL(para las imagenes):
 from PIL import Image, ImageTk """
+from PIL import Image, ImageTk
 
 
 
@@ -27,7 +28,8 @@ class DestinosView(tk.Frame):
 
         """AQUI CAMBIO EL TAMAÑO Y EL TITULO DE LA VENTANA"""
         self.app.title("FoodTravels App - Destinos")
-        self.app.geometry("800x600")
+        self.app.geometry("885x620")
+        self.app.resizable(0, 0)
 
         self.create_widgets()
         
@@ -75,10 +77,10 @@ class DestinosView(tk.Frame):
         return self.mapa.set_marker(latitud, longitud, text=texto)
 
     def dibujar_destino_info(self):
-        self.texto = tk.Listbox(self, width=40, height=20)
+        self.texto = tk.Listbox(self, width=40, height=2)
         self.texto.insert(tk.END, self.destino_seleccionado.popularidad)
         if self.destino_seleccionado.disponibilidad == 1:
             self.texto.insert(tk.END, 'Abierto')
         else:
             self.texto.insert(tk.END, 'Cerrado')
-        self.texto.grid(row=0, column=0, sticky='s')
+        self.texto.grid(row=0, column=0, pady=10, sticky='s')

@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import Image, ImageTk
 
 class ControladorDestinos:
     def __init__(self, app, destinos):
@@ -19,7 +20,7 @@ class ControladorDestinos:
 
 
     def seleccionar_destinos(self, event):
-        self.app.vista_destinos.desvincular_evento_seleccion()
+        self.app.vista_destinos.desvincular_evento_seleccion()#Desvincular <<ListboxSelect>>
         #self.app.vista_destinos.marcadores.pop()
         indice_seleccionado = self.app.vista_destinos.destinos_listbox.curselection()
         indice_seleccionado = indice_seleccionado[0]
@@ -35,9 +36,10 @@ class ControladorDestinos:
                 self.app.vista_destinos.mapa.set_position(ubicacion.latitud, ubicacion.longitud)
                 self.app.vista_destinos.mapa.set_marker(ubicacion.latitud, ubicacion.longitud, text=f'{destino_seleccionado.nombre}')
                 self.app.vista_destinos.mapa.set_zoom(16)#Cambiar a 16 si quieren
-                self.cargar_marcadores()
+                self.cargar_marcadores()#Añado todos los demas marcadores.
         
-        self.app.vista_destinos.vincular_evento_seleccion()
+        self.app.vista_destinos.vincular_evento_seleccion()#Vincular <<ListboxSelect>>
+
             # else:
             #     self.app.vista_destinos.mapa.delete_all_marker()
             #     self.app.vista_destinos.mapa.set_marker(ubicacion.latitud, ubicacion.longitud, text=f'{destino_seleccionado.nombre}')

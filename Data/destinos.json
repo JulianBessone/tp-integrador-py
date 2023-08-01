@@ -9,7 +9,7 @@
 		"popularidad": 4,
 		"disponibilidad": true,
 		"id_ubicacion": 1,
-		"imagen": "assets/img/LaEsquina.jpg"
+		"imagen": "LaEsquina.jpg"
 	},
 	{
 		"id_destino": 2,
@@ -21,7 +21,7 @@
 		"popularidad": 4.5,
 		"disponibilidad": false,
 		"id_ubicacion": 2,
-		"imagen": "assets/img/BixiCoffeeHouses.jpg"
+		"imagen": "BixiCoffeeHouses.jpg"
 	},
 	{
 		"id_destino": 3,
@@ -33,7 +33,7 @@
 		"popularidad": 4,
 		"disponibilidad": true,
 		"id_ubicacion": 3,
-		"imagen": "assets/img/SirOfThebeer-Bigote.jpg"
+		"imagen": "SirOfThebeer-Bigote.jpg"
 	},
 	{
 		"id_destino": 4,
@@ -45,7 +45,7 @@
 		"popularidad": 4.5,
 		"disponibilidad": false,
 		"id_ubicacion": 4,
-		"imagen": "assets/img/Dubai.jpg"
+		"imagen": "Dubai.jpg"
 	},
 	{
 		"id_destino": 5,
@@ -64,7 +64,7 @@
 		"popularidad": 4,
 		"disponibilidad": true,
 		"id_ubicacion": 5,
-		"imagen": "assets/img/RotiseriaChinachuaXing.jpg"
+		"imagen": "RotiseriaChinachuaXing.jpg"
 	},
 	{
 		"id_destino": 6,
@@ -82,7 +82,7 @@
 		"popularidad": 4.5,
 		"disponibilidad": false,
 		"id_ubicacion": 6,
-		"imagen": "assets/img/JunDu.jpg"
+		"imagen": "JunDu.jpg"
 	},
 	{
 		"id_destino": 7,
@@ -122,7 +122,7 @@
 		"popularidad": 5,
 		"disponibilidad": false,
 		"id_ubicacion": 8,
-		"imagen": "assets/img/InBoccaAlLupoPizza.jpg"
+		"imagen": "InBoccaAlLupoPizza.jpg"
 	},
 	{
 		"id_destino": 9,
@@ -134,7 +134,7 @@
 		"popularidad": 4.5,
 		"disponibilidad": true,
 		"id_ubicacion": 9,
-		"imagen": "assets/img/JoseBalcarse.jpg"
+		"imagen": "JoseBalcarse.jpg"
 	},
 	{
 		"id_destino": 10,
@@ -154,7 +154,7 @@
 		"popularidad": 4.5,
 		"disponibilidad": false,
 		"id_ubicacion": 10,
-		"imagen": "assets/img/NomadaSushiBar.jpg"
+		"imagen": "NomadaSushiBar.jpg"
 	},
 	{
 		"id_destino": 11,
@@ -176,7 +176,7 @@
 		"popularidad": 5,
 		"disponibilidad": true,
 		"id_ubicacion": 11,
-		"imagen": "assets/img/KchipKoreanFood.jpg"
+		"imagen": "KchipKoreanFood.jpg"
 	},
 	{
 		"id_destino": 12,
@@ -188,6 +188,6 @@
 		"popularidad": 4,
 		"disponibilidad": false,
 		"id_ubicacion": 12,
-		"imagen": "assets/img/LaNuevaMegaPeniaLaPanaderiaDelChunia.jpg"
+		"imagen": "LaNuevaMegaPeniaLaPanaderiaDelChunia.jpg"
 	}
 ]
