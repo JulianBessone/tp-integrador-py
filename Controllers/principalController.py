@@ -6,16 +6,19 @@ from Views.resultadosBusquedaView import ResultadosBusquedaView
 from Views.reviewsView import ReviewsVista
 from Views.destinosView import VistaDestinos #agregado
 from Views.actividadesView import VistaActividades #agregado
+from Views.rutasView import VistaRutas
 #Importación de Modelos
 from Models.reviews import Review
 from Models.destinos import DestinoCulinario
 from Models.users import Usuario
 from Models.actividades import Actividad #agregado
+from Models.rutasVisitas import RutaDeVisita
 #Importación de Controladores
 from Controllers.controladorInicio import ControladorInicio
 from Controllers.controladorReview import ControladorReview
 from Controllers.controladorDestino import ControladorDestinos #agregado
 from Controllers.controladorActividad import ControladorActividades #agregado
+from Controllers.controladorRutas import ControladorRutas
 
 class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafica
     def __init__(self):
@@ -34,13 +37,15 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         reviews = Review.cargar_reviews("data/reviews.json")
         usuarios = Usuario.cargar_users("data/usuarios.json")
         actividades = Actividad.cargar_actividades("data/actividades.json") #agregado
+        rutas = RutaDeVisita.cargar_rutas("data/rutas.json")
 
 
         ##CONTROLADORES
         controladorInicio = ControladorInicio(self)
         controladorReview = ControladorReview(self)
         controladorDestino = ControladorDestinos(self, destinos) #agregado
-        controladorActividad = ControladorActividades(self, actividades) #agregado
+        controladorActividad = ControladorActividades(self, destinos, actividades)
+        controladorRutas = ControladorRutas(self, destinos, rutas, actividades)
 
         
         ##VISTAS
@@ -49,6 +54,7 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         self.vista_reviews = ReviewsVista(self, controladorReview, reviews)
         self.vista_destinos = VistaDestinos(self, controladorDestino) #agregado
         self.vista_actividades = VistaActividades(self, controladorActividad) #agregado
+        self.vista_rutas = VistaRutas(self, controladorRutas) # a la vista de rutas le paso el controlador con los datos de destinos y rutas 
   
 
         ##AJUSTES DE FRAMES
@@ -57,6 +63,7 @@ class Aplicacion(tk.Tk):# le paso tk a la app para que tenga una interfas grafic
         self.ajustar_frame(self.vista_reviews)
         self.ajustar_frame(self.vista_destinos) #agregado
         self.ajustar_frame(self.vista_actividades) #agregado
+        self.ajustar_frame(self.vista_rutas) #agregado
 
     #FUNCION PARA AJUSTAR LOS FRAMES
     def ajustar_frame(self, frame):

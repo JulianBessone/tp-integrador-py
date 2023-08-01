@@ -1,0 +1,16 @@
+[
+	{
+		"id_ruta": 1,
+		"nombre_ruta": "Ruta Gastronómica Mediterránea",
+		"destinos": [2, 5]
+	},
+	{
+		"id_ruta": 2,
+		"nombre_ruta": "Ruta de Sabores Exóticos",
+		"destinos": [4, 8, 10]
+	}
+]
+
+
+
+    

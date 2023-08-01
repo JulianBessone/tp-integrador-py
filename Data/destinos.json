@@ -9,7 +9,7 @@
         "popularidad": 4.5,
         "disponibilidad": true,
         "id_ubicacion": 1,
-        "imagen": "https://example.com/bella_italia.jpg"
+        "imagen": "assets/img/bella-italia.jpg"
     },
     {
         "id_destino": 2,
@@ -21,7 +21,7 @@
         "popularidad": 4.2,
         "disponibilidad": true,
         "id_ubicacion": 2,
-        "imagen": "https://example.com/sabores_mediterraneos.jpg"
+        "imagen": "assets/img/sabores-mediterraneos.jpg"
     },
     {
         "id_destino": 3,
