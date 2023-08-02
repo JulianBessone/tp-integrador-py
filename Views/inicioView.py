@@ -39,11 +39,16 @@ class InicioView(tk.Frame):
         )
         self.boton_buscar.pack(pady=5)
 
+
         # Separador para mejorar la apariencia
         tk.Frame(self, height=2, bd=1, relief=tk.SUNKEN).pack(fill=tk.X, padx=5, pady=5)
 
         # Botones: Destinos, Reviews y Planificar Visita
-        self.boton_destinos = tk.Button(self, text="Destinos", command=print("hola"))
+
+
+        self.boton_destinos = tk.Button(self, text="Destinos", command=lambda: self.controlador.mostrar_destinos())#Falta el controlador
+
+
         self.boton_destinos.pack(pady=5)
 
         self.boton_reviews = tk.Button(
@@ -51,9 +56,9 @@ class InicioView(tk.Frame):
         )
         self.boton_reviews.pack(pady=5)
 
-        self.boton_planificar_visita = tk.Button(
-            self, text="Planificar Visita", command=print("hola")
-        )
+
+        self.boton_planificar_visita = tk.Button(self, text="Planificar Visita", command= lambda: self.controlador.mostrar_rutas())
+
         self.boton_planificar_visita.pack(pady=5)
 
         # Mostrar los destinos en una etiqueta
