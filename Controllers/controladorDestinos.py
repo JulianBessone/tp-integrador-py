@@ -50,31 +50,23 @@ class ControladorDestinos:
 
         self.app.vista_destinos.vincular_evento_seleccion()#Vincular <<ListboxSelect>>
 
-            # else:
-            #     self.app.vista_destinos.mapa.delete_all_marker()
-            #     self.app.vista_destinos.mapa.set_marker(ubicacion.latitud, ubicacion.longitud, text=f'{destino_seleccionado.nombre}')
-        # print(self.app.vista_destinos.destino_seleccionado)
 
-        # if self.app.vista_destinos.destinos_listbox.focus_get() == self.app.vista_destinos.destinos_listbox:
-        #     self.app.vista_destinos.mapa.set_marker(ubicacion.latitud, ubicacion.longitud, text=f'{destino_seleccionado.nombre}')
-        # else:
-        #     self.app.vista_destinos.mapa.set_marker(ubicacion.latitud, ubicacion.longitud, text='')
+    def obtener_destinos(self):
+        return self.destinos  #devuelvo la lista de destinos
 
-        # def marcar_desmarcar_destinos(event):
-        #     ind_destino = self.app.vista_destinos.destinos_listbox.curselection()
-        #     ind_destino = ind_destino[0]
-        #     select_destino = self.destinos[ind_destino]
-        #     self.app.vista_destinos.select_destino = select_destino
-        #     if ind_destino and self.app.vista_destino.destinos_listbox.focus_get == self.app.vista_destino.destinos_lisbox:
-        #         self.app.vista_destinos.mapa.set_marker(text=f'{select_destino.nombre}')
-        #     else:
-        #         self.app.vista_destino.mapa.set_marker(text='')
+    def seleccionar_destino(self):
+        """
+        Obtiene el índice del destino seleccionado y llama a la vista de
+        información para mostrar la información de la actividad.
+        """
+        indice = self.app.vista_destinos.obtener_destino_seleccionado()
+        if indice is not None:
+            destino = self.destinos[indice]  #selecciono el objeto de la lista de objetos
+            self.app.vista_actividades.mostrar_actividades_destino(destino)
+            self.app.cambiar_frame(self.app.vista_actividades)
+
+    def regresar_inicio(self):
+        self.app.cambiar_frame(self.app.vista_inicio)
 
 
-    """def seleccionar_destinos_ubi(self, event):
-        indice_seleccionado_ubi = self.app.vista_destinos.destinos_listbox.curselection()
-        indice_seleccionado_ubi = indice_seleccionado_ubi[0]
-        ubicacion_seleccionada = self.ubicaciones[indice_seleccionado_ubi]
-        self.app.vista_destinos.ubicacion_seleccionada = ubicacion_seleccionada
-        #Llamo a la función que me centre en los marcadores
-    """
+          

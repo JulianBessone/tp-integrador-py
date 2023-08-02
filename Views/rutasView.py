@@ -160,7 +160,7 @@ class VistaRutas(tk.Frame):
         """
         indice = self.obtener_destino_seleccionado()
         if indice is not None:
-            destino_seleccionado = self.controlador.obtener_destinos()[indice]
+            destino_seleccionado = self.controlador.obtener_destinos()[indice -1]
 #            ingredientes = ", ".join(destino_seleccionado.ingredientes)
             tipo_cocina = destino_seleccionado.tipo_cocina
             nombre = destino_seleccionado.nombre

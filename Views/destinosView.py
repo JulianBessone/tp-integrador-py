@@ -98,15 +98,15 @@ class DestinosView(tk.Frame):
         Actualiza la lista de destinos con los destinos obtenidos del controlador.
         """
         destinos = self.controlador.obtener_destinos()
-        self.listbox.delete(0, tk.END)
+        self.destinos_listbox.delete(0, tk.END)
         for destino in destinos:
-            self.listbox.insert(tk.END, destino.nombre)
+            self.destinos_listbox.insert(tk.END, destino.nombre)
 
     def obtener_destino_seleccionado(self):
         """
         Retorna el índice del destino seleccionado en la lista.
         """
-        indice = self.listbox.curselection()
+        indice = self.destinos_listbox.curselection()
         if indice:
             return indice[0]
         else:

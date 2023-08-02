@@ -56,7 +56,8 @@ class VistaActividades(tk.Frame):
         # Cargar la imagen desde la URL usando Pillow
         # la imagen iria en la columna 0 fila 0
         try:
-            imagen = Image.open(imagen_url)
+            imgPath = f'assets/img/{imagen_url}'
+            imagen = Image.open(imgPath)
             # Redimensionar la imagen si es necesario
             ancho=400
             alto=400

@@ -5,7 +5,7 @@ from Views.inicioView import InicioView
 from Views.resultadosBusquedaView import ResultadosBusquedaView
 from Views.reviewsView import ReviewsVista
 
-from Views.destinosView import VistaDestinos #agregado
+from Views.destinosView import DestinosView #agregado
 from Views.actividadesView import VistaActividades #agregado
 from Views.rutasView import VistaRutas
 
