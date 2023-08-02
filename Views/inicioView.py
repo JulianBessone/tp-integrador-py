@@ -37,7 +37,8 @@ class InicioView(tk.Frame):
                 self.input_buscar.get()
             ),
         )
-        self.boton_buscar.pack(pady=5)
+        self.boton_buscar.place(x=340, y=130, width=200, height=30)
+        #self.boton_buscar.pack(pady=5)
 
 
         # Separador para mejorar la apariencia
@@ -48,23 +49,26 @@ class InicioView(tk.Frame):
 
         self.boton_destinos = tk.Button(self, text="Destinos", command=lambda: self.controlador.mostrar_destinos())#Falta el controlador
 
-
-        self.boton_destinos.pack(pady=5)
+        self.boton_destinos.place(x=40, y=170, width=200, height=40) 
+        #self.boton_destinos.pack(pady=5)
 
         self.boton_reviews = tk.Button(
             self, text="Reviews", command=lambda: self.controlador.mostrar_reviews()
         )
-        self.boton_reviews.pack(pady=5)
+        self.boton_reviews.place(x=340, y=170, width=200, height=40) 
+        #self.boton_reviews.pack(pady=5)
 
 
         self.boton_planificar_visita = tk.Button(self, text="Planificar Visita", command= lambda: self.controlador.mostrar_rutas())
-
-        self.boton_planificar_visita.pack(pady=5)
+        self.boton_planificar_visita.place(x=640, y=170, width=200, height=40)
+        #self.boton_planificar_visita.pack(pady=5)
 
         # Mostrar los destinos en una etiqueta
         self.label_destinos = tk.Label(self, text="Destinos:")
-        self.label_destinos.pack()
+        self.label_destinos.place(x=300, y=220)
+        #self.label_destinos.pack()
 
         destinos_text = "\n".join([f"- {destino.nombre}" for destino in self.destinos])
         self.reviews_label = tk.Label(self, text=destinos_text, justify=tk.LEFT)
-        self.reviews_label.pack()
+        self.reviews_label.place(x=300, y=250)
+        #self.reviews_label.pack()

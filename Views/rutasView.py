@@ -22,7 +22,7 @@ class VistaRutas(tk.Frame):
         self.titulo.place(x=200,y=20)
 
         #self.titulo = tk.Label(self, text="Ingresa el tipo de comida \n o la actividad que te interese", font=("Arial", 14), bg=self.fondo, fg=self.color_verde)
-        self.titulo = tk.Label(self, text="Ingresa el tipo de comida \n o la actividad que te interese", font=("Arial", 14))
+        self.titulo = tk.Label(self, text="Busca por tipo de comida \n o actividad", font=("Arial", 14))
         self.titulo.place(x=10, y=90, anchor=tk.W)
 
         # Agregar un cuadro de texto para el buscador
@@ -55,9 +55,9 @@ class VistaRutas(tk.Frame):
 
         # #widgests de la tercera columna
 
-        # Título "Tu ruta actual"
-        self.titulo_ruta_actual = tk.Label(self, text="Tus rutas",font=("Arial", 14))
-        self.titulo_ruta_actual.place(x=700, y=90)
+        # # Título "Tu ruta actual"
+        # self.titulo_ruta_actual = tk.Label(self, text="Tus rutas",font=("Arial", 14))
+        # self.titulo_ruta_actual.place(x=700, y=90)
 
         # # Listbox para mostrar el listado de rutas con nombre y destinos
         # self.listbox_rutas = tk.Listbox(self, width=30)
@@ -232,10 +232,26 @@ class VistaRutas(tk.Frame):
 
             # Crear la ventana Toplevel
             ventana_destino_seleccionado = tk.Toplevel(self)
-            ventana_destino_seleccionado.title("Destino Seleccionado")
+            ventana_destino_seleccionado.title("Agrega tu destino a la ruta")
+
+            # Dimensiones de la ventana TopLevel
+            ventana_ancho = 400
+            ventana_alto = 400
+
+            # Obtener las dimensiones de la pantalla
+            pantalla_ancho = ventana_destino_seleccionado.winfo_screenwidth()
+            pantalla_alto = ventana_destino_seleccionado.winfo_screenheight()
+
+            # Calcular las coordenadas para centrar la ventana
+            x = (pantalla_ancho - ventana_ancho) // 2
+            y = (pantalla_alto - ventana_alto) // 2
+
+            # Establecer la geometría de la ventana
+            ventana_destino_seleccionado.geometry(f"{ventana_ancho}x{ventana_alto}+{x}+{y}")
+
 
             # Etiqueta para mostrar el destino seleccionado
-            etiqueta_destino_seleccionado = tk.Label(ventana_destino_seleccionado, text=f"Destino seleccionado: {nombre_destino}", font=("Arial", 16))
+            etiqueta_destino_seleccionado = tk.Label(ventana_destino_seleccionado, text=f"{nombre_destino}", font=("Arial", 16))
             etiqueta_destino_seleccionado.pack(padx=10, pady=10)
 
             # Título para el Listbox de selección de rutas
@@ -255,10 +271,16 @@ class VistaRutas(tk.Frame):
             for ruta in rutas:
                 listbox_rutas.insert(tk.END, ruta.nombre)
 
+            # Botón para agregar el destino a la ruta seleccionada
+            boton_agregar_destino = tk.Button(ventana_destino_seleccionado, text="Agregar destino a ruta", command=self.agregar_destino_a_ruta)
+            boton_agregar_destino.pack(pady=10)                
 
-            # Listbox para mostrar los destinos de la ruta seleccionada
-            listbox_destinos_ruta = tk.Listbox(ventana_destino_seleccionado, width=40, height=10, font=("Arial", 12))
-            listbox_destinos_ruta.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+
+
+
+            # # Listbox para mostrar los destinos de la ruta seleccionada
+            # listbox_destinos_ruta = tk.Listbox(ventana_destino_seleccionado, width=40, height=10, font=("Arial", 12))
+            # listbox_destinos_ruta.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
         def mostrar_destinos_ruta(event):
             # Obtener el índice de la ruta seleccionada en listbox_rutas_json
@@ -286,4 +308,10 @@ class VistaRutas(tk.Frame):
 
                 # Botón para cerrar la ventana Toplevel
                 boton_cerrar = tk.Button(ventana_destino_seleccionado, text="Cerrar", command=ventana_destino_seleccionado.destroy)
-                boton_cerrar.pack(pady=10)                   
+                boton_cerrar.pack(pady=10) 
+
+
+        def agregar_destino_a_ruta(self):
+            # Lógica para agregar el destino seleccionado a la ruta seleccionada
+            pass
+
