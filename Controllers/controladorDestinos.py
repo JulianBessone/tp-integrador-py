@@ -7,6 +7,7 @@ class ControladorDestinos:
         self.marcadores = []
         self.destinos = destinos
         #self.cargar_marcadores()
+        self.imagen_tk = None
 
     def cargar_marcadores(self):
         for ubicacion in self.app.ubicaciones:
@@ -20,6 +21,7 @@ class ControladorDestinos:
 
 
     def seleccionar_destinos(self, event):
+        self.imagen_tk = None
         self.app.vista_destinos.desvincular_evento_seleccion()#Desvincular <<ListboxSelect>>
         #self.app.vista_destinos.marcadores.pop()
         indice_seleccionado = self.app.vista_destinos.destinos_listbox.curselection()
@@ -35,9 +37,17 @@ class ControladorDestinos:
             if(destino_seleccionado.id_ubicacion == ubicacion.id):
                 self.app.vista_destinos.mapa.set_position(ubicacion.latitud, ubicacion.longitud)
                 self.app.vista_destinos.mapa.set_marker(ubicacion.latitud, ubicacion.longitud, text=f'{destino_seleccionado.nombre}')
-                self.app.vista_destinos.mapa.set_zoom(16)#Cambiar a 16 si quieren
+                self.app.vista_destinos.mapa.set_zoom(14)#Cambiar a 16 si quieren
                 self.cargar_marcadores()#Añado todos los demas marcadores.
         
+        if self.imagen_tk is None:
+            rutaIMG = f'assets/img/{destino_seleccionado.imagen}'
+            imagen_pil = Image.open(f"assets/img/{destino_seleccionado.imagen}")
+            self.imagen_tk = ImageTk.PhotoImage(imagen_pil)
+        etiqueta_imagen = tk.Label(self.app, image=self.imagen_tk)
+        etiqueta_imagen.config(width=240, height=200)
+        etiqueta_imagen.place(x=10, y=350)
+
         self.app.vista_destinos.vincular_evento_seleccion()#Vincular <<ListboxSelect>>
 
             # else:
