@@ -21,7 +21,6 @@ from Models.ubicaciones import Ubicacion
 
 from Controllers.controladorInicio import ControladorInicio
 from Controllers.controladorReview import ControladorReview
-from Controllers.controladorDestino import ControladorDestinos #agregado
 from Controllers.controladorActividad import ControladorActividades #agregado
 from Controllers.controladorRutas import ControladorRutas
 from Controllers.controladorDestinos import ControladorDestinos
@@ -33,7 +32,7 @@ class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas graf
         tk.Tk.__init__(self)
         # a la interfas la paso la instancia para poder controlarla
         # y cambiarle cosas como el titutlo
-        #self.iconbitmap("assets/img/burger.ico")
+        self.iconbitmap("assets/img/burger.ico")
         self.title("FoodApp")
         self.geometry("1080x720")
         self.resizable(True, True)
@@ -68,14 +67,10 @@ class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas graf
         self.vista_inicio = InicioView(self, controladorInicio, destinos)
         # A la vista de inicio le paso el controlador de su vista y la data de destinos.
         self.vista_resultados_busqueda = ResultadosBusquedaView(self, destinos)
-        self.vista_reviews = ReviewsVista(
-            self, controladorReview, reviews, destinos, usuarios
-        )
-        self.vista_cargar_review = CreateReview(
-            self, controladorReview, reviews, destinos, usuarios
-        )
+        self.vista_reviews = ReviewsVista(self, controladorReview, reviews, destinos, usuarios)
+        self.vista_cargar_review = CreateReview(self, controladorReview, reviews, destinos, usuarios)
         self.vista_destinos = DestinosView(self, controladorDestinos, destinos, ubicaciones)
-        self.vista_actividades = VistaActividades(self, controladorActividad) #agregado
+        self.vista_actividades = VistaActividades(self, controladorActividad)
         self.vista_rutas = VistaRutas(self, controladorRutas)
 
 
@@ -84,9 +79,9 @@ class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas graf
         self.ajustar_frame(self.vista_resultados_busqueda)
         self.ajustar_frame(self.vista_reviews)
         self.ajustar_frame(self.vista_cargar_review)
-        self.ajustar_frame(self.vista_destinos) #agregado
-        self.ajustar_frame(self.vista_actividades) #agregado
-        self.ajustar_frame(self.vista_rutas) #agregado
+        self.ajustar_frame(self.vista_destinos)
+        self.ajustar_frame(self.vista_actividades)
+        self.ajustar_frame(self.vista_rutas)
 
 
     # FUNCION PARA AJUSTAR LOS FRAMES

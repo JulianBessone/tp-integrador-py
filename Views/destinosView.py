@@ -43,10 +43,6 @@ class DestinosView(tk.Frame):
     
     def create_widgets(self):
 
-        # self.label_titulo = tk.Label(self, text="Destinos", font=("Arial", 20))
-        # self.label_titulo.grid(row=0, column=0, columnspan=2, pady=10)
-
-
         ##AQUI CREO LA LISTA DE DESTINOS
         self.destinos_listbox = tk.Listbox(self, width=40, height=20)
 
@@ -93,14 +89,6 @@ class DestinosView(tk.Frame):
         self.textoPopularidad.config(text=f'{self.destino_seleccionado.popularidad}')
         self.textoPopularidad.place(x=20, y=590)
         
-    def actualizar_destinos(self):
-        """
-        Actualiza la lista de destinos con los destinos obtenidos del controlador.
-        """
-        destinos = self.controlador.obtener_destinos()
-        self.destinos_listbox.delete(0, tk.END)
-        for destino in destinos:
-            self.destinos_listbox.insert(tk.END, destino.nombre)
 
     def obtener_destino_seleccionado(self):
         """

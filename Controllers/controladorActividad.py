@@ -9,6 +9,9 @@ class ControladorActividades:
         self.app.cambiar_frame(self.app.vista_destinos)
 
     def obtener_actividades(self, destino):
+
+        ## ---(!Corrección)--- Porque recibe destino como parametro si luego no lo utiliza?
+
         return self.actividades  #devuelvo la lista de actividades como objetos
 
     def obtener_actividades_destino(self, indice):
