@@ -2,11 +2,11 @@ import tkinter as tk
 
 
 class ReviewsVista(tk.Frame):
-    def __init__(self, app, controlador, reviews, destinos, usuarios):
+    def __init__(self, app, reviewsController, reviews, destinos, usuarios):
         super().__init__(app)
         self.app = app
         self.reviews = reviews
-        self.controlador = controlador
+        self.controlador = reviewsController
         self.destinos = destinos
         self.usuarios = usuarios
 
@@ -24,7 +24,8 @@ class ReviewsVista(tk.Frame):
         self.reviews_listbox = tk.Listbox(self, width=80, height=20)
 
         for review in self.reviews:
-            """Deberias pasar por parametro la lista de destinos y luego dentro de este for buscar el destino correspondienta a id_destino del review"""
+            """Deberias pasar por parametro la lista de destinos y luego dentro
+            de este for buscar el destino correspondienta a id_destino del review"""
             self.reviews_listbox.insert(tk.END, "Calificación", review.calificacion)
 
             self.reviews_listbox.insert(tk.END, review.comentario)
@@ -44,6 +45,8 @@ class ReviewsVista(tk.Frame):
         self.reviews_listbox.pack(pady=5)
 
         self.create_review_button = tk.Button(
-            self, text="Agregar nueva Reseña", command=lambda: print("hola")
+            self,
+            text="Agregar nueva Reseña",
+            command=lambda: self.controlador.mostrar_cargar_review(),
         )
         self.create_review_button.pack(pady=5, padx=5)
