@@ -23,6 +23,6 @@ class Ubicacion:
     
     @staticmethod
     def cargar_ubicaciones(archivo_json):
-        with open(archivo_json, "r") as archivo:
+        with open(archivo_json, "r", encoding="utf-8") as archivo:
             datos = json.load(archivo)
         return [Ubicacion.de_json(json.dumps(dato)) for dato in datos]

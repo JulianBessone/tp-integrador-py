@@ -44,7 +44,7 @@ class DestinosView(tk.Frame):
     def create_widgets(self):
 
         ##AQUI CREO LA LISTA DE DESTINOS
-        self.destinos_listbox = tk.Listbox(self, width=40, height=20)
+        self.destinos_listbox = tk.Listbox(self, width=40, height=16)
 
         for destino in self.destinos:
             """Deberias pasar por parametro la lista de destinos y luego dentro de este for buscar el destino correspondienta a id_destino del review"""
@@ -55,7 +55,9 @@ class DestinosView(tk.Frame):
         self.destinos_listbox.bind("<Double-Button-1>", self.seleccionar_destino)
         # self.destinos_listbox.bind('<<ListboxSelect>>', self.controlador.seleccionar_destinos_ubi)
 
-        
+        buttom_volver = tk.Button(self, text='Volver', command=lambda:self.controlador.mostrar_inicio())
+        buttom_volver.config(width=27, height=2)
+        buttom_volver.place(x=27 ,y=560)
 
         ##MAPA VISTA
         self.mapa = TkinterMapView(self, width=600, height=600, corner_radius=0)
@@ -68,6 +70,7 @@ class DestinosView(tk.Frame):
             self.agregar_marcador_mapa(ubicacion.latitud, ubicacion.longitud, '')
         
 
+
         ##AGREGAR MARCADORES DE DESTINOS
     def agregar_marcador_mapa(self, latitud, longitud, texto):
         return self.mapa.set_marker(latitud, longitud, text=texto)
@@ -76,7 +79,7 @@ class DestinosView(tk.Frame):
 
         self.tituloDetalleDestino = tk.Label(self, text='INFORMACIÓN DEL DESTINO')
         self.tituloDetalleDestino.config(width=30, height=3, pady=0)
-        self.tituloDetalleDestino.place(x=10, y=540)
+        self.tituloDetalleDestino.place(x=10, y=480)
 
 
         self.textoDisponiblidad = tk.Label(self, width=30, height=1)
@@ -84,10 +87,10 @@ class DestinosView(tk.Frame):
             self.textoDisponiblidad.config(text='Abierto')
         else:
             self.textoDisponiblidad.config(text='Cerrado')
-        self.textoDisponiblidad.place(x=20, y=570)
+        self.textoDisponiblidad.place(x=20, y=510)
         self.textoPopularidad = tk.Label(self, width=30, height=1)
         self.textoPopularidad.config(text=f'{self.destino_seleccionado.popularidad}')
-        self.textoPopularidad.place(x=20, y=590)
+        self.textoPopularidad.place(x=20, y=530)
         
 
     def obtener_destino_seleccionado(self):
@@ -106,4 +109,3 @@ class DestinosView(tk.Frame):
         mostrar la información del destino.
         """
         self.controlador.seleccionar_destino()
-

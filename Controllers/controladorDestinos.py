@@ -40,7 +40,7 @@ class ControladorDestinos:
             self.imagen_tk = ImageTk.PhotoImage(imagen_pil)
         etiqueta_imagen = tk.Label(self.app.vista_destinos, image=self.imagen_tk)
         etiqueta_imagen.config(width=240, height=200)
-        etiqueta_imagen.place(x=10, y=350)
+        etiqueta_imagen.place(x=10, y=280)
 
         self.app.vista_destinos.vincular_evento_seleccion()#Vincular <<ListboxSelect>>
 
@@ -62,5 +62,5 @@ class ControladorDestinos:
     def regresar_inicio(self):
         self.app.cambiar_frame(self.app.vista_inicio)
 
-
-          
+    def mostrar_inicio(self):
+        self.app.cambiar_frame(self.app.vista_inicio)
