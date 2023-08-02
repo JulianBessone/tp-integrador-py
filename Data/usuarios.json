@@ -3,7 +3,7 @@
         "id_usuario": 1,
         "nombre": "Juan",
         "apellido": "Pérez",
-        "historial_rutas": [1, 5, 2]
+        "historial_rutas": [1, 2]
     },
     {
         "id_usuario": 2,

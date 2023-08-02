@@ -32,12 +32,14 @@ class InicioView(tk.Frame):
         self.boton_buscar = tk.Button(self, text="Buscar", command= lambda: self.controlador.buscar_restaurantes(self.input_buscar.get()))
         self.boton_buscar.pack(pady=5)
 
-     
+
         # Separador para mejorar la apariencia
         tk.Frame(self, height=2, bd=1, relief=tk.SUNKEN).pack(fill=tk.X, padx=5, pady=5)
 
         # Botones: Destinos, Reviews y Planificar Visita
-        self.boton_destinos = tk.Button(self, text="Destinos", command= lambda: self.controlador.mostrar_destinos())
+
+        self.boton_destinos = tk.Button(self, text="Destinos", command=lambda: self.controlador.mostrar_destinos())#Falta el controlador
+
         self.boton_destinos.pack(pady=5)
 
         self.boton_reviews = tk.Button(self, text="Reviews", command= lambda: self.controlador.mostrar_reviews())

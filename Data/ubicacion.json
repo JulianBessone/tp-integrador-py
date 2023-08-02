@@ -1,0 +1,62 @@
+[
+	{
+		"id_ubicacion": 1,
+		"direccion": "4400, Balcarce 499, A4400 Salta",
+		"coordenadas": "-24.78320375403741, -65.41177386203374"
+	},
+	{
+		"id_ubicacion": 2,
+		"direccion": "Balcarce 96, A4400 Salta",
+		"coordenadas": "-24.78848564487867, -65.41190692822138"
+	},
+	{
+		"id_ubicacion": 3,
+		"direccion": "Av. Reyes Catolicos Los Abetos y, Salta",
+		"coordenadas": "-24.767258341608336, -65.39769315096427"
+	},
+	{
+		"id_ubicacion": 4,
+		"direccion": "Juan Martín, Hiper libertad, Leguizamón 296 local 50, A4400 Salta",
+		"coordenadas": "-24.783833430801753, -65.40614649438079"
+	},
+	{
+		"id_ubicacion": 5,
+		"direccion": "Santiago Morales 513, Salta",
+		"coordenadas": "-24.767419967597156, -65.40761803375929"
+	},
+	{
+		"id_ubicacion": 6,
+		"direccion": "20 de Febrero 268, A4400 Salta",
+		"coordenadas": "-24.786443923860862, -65.41329120199214"
+	},
+	{
+		"id_ubicacion": 7,
+		"direccion": "Av. Belgrano 1402, A4400 Salta",
+		"coordenadas": "-24.786181722654224, -65.42170903006172"
+	},
+	{
+		"id_ubicacion": 8,
+		"direccion": "Balcarce 1249, A4400 Salta",
+		"coordenadas": "-24.774015270436074, -65.41096581411317"
+	},
+	{
+		"id_ubicacion": 9,
+		"direccion": "Necochea 594, Salta",
+		"coordenadas": "-24.778345284466678, -65.40961184725464"
+	},
+	{
+		"id_ubicacion": 10,
+		"direccion": "12 de Octubre 802, A4400 Salta",
+		"coordenadas": "-24.77451398417703, -65.41218337658215"
+	},
+	{
+		"id_ubicacion": 11,
+		"direccion": "Buenos Aires 88 local 13, A4400 Salta",
+		"coordenadas": "-24.78958999654424, -65.41001657922762"
+	},
+	{
+		"id_ubicacion": 12,
+		"direccion": "Balcarce 446, A4400 Salta",
+		"coordenadas": "-24.783995087485167, -65.41128551507455"
+	}
+]
