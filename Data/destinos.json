@@ -21,7 +21,7 @@
 		"popularidad": 4.5,
 		"disponibilidad": false,
 		"id_ubicacion": 2,
-		"imagen": "BixiCoffeeHouses.jpg"
+		"imagen": "BixiCoffeeHouse.jpg"
 	},
 	{
 		"id_destino": 3,
@@ -33,7 +33,7 @@
 		"popularidad": 4,
 		"disponibilidad": true,
 		"id_ubicacion": 3,
-		"imagen": "SirOfThebeer-Bigote.jpg"
+		"imagen": "SirOfThebeer-Bigote.jpeg"
 	},
 	{
 		"id_destino": 4,
@@ -154,7 +154,7 @@
 		"popularidad": 4.5,
 		"disponibilidad": false,
 		"id_ubicacion": 10,
-		"imagen": "NomadaSushiBar.jpg"
+		"imagen": "NomadaSushiBar.png"
 	},
 	{
 		"id_destino": 11,

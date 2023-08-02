@@ -29,7 +29,7 @@ class DestinosView(tk.Frame):
         """AQUI CAMBIO EL TAMAÑO Y EL TITULO DE LA VENTANA"""
         self.app.title("FoodTravels App - Destinos")
         self.app.geometry("885x620")
-        self.app.resizable(0, 0)
+        self.app.resizable(1, 1)
 
         self.create_widgets()
         
@@ -63,24 +63,30 @@ class DestinosView(tk.Frame):
         self.mapa = TkinterMapView(self, width=600, height=600, corner_radius=0)
         self.mapa.set_position(-24.77616437851034, -65.41079411004006)
         self.mapa.set_zoom(14)
-        self.mapa.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
+        self.mapa.grid(row=0, column=1, padx=10, pady=10, sticky="nsew",rowspan=2)
         self.mapa.set_marker(-24.77616437851034, -65.41079411004006)
 
         for ubicacion in (self.marcadores):
             self.agregar_marcador_mapa(ubicacion.latitud, ubicacion.longitud, '')
-            
-
-
+        
 
         ##AGREGAR MARCADORES DE DESTINOS
     def agregar_marcador_mapa(self, latitud, longitud, texto):
         return self.mapa.set_marker(latitud, longitud, text=texto)
 
     def dibujar_destino_info(self):
-        self.texto = tk.Listbox(self, width=40, height=2)
-        self.texto.insert(tk.END, self.destino_seleccionado.popularidad)
+
+        self.tituloDetalleDestino = tk.Label(self, text='INFORMACIÓN DEL DESTINO')
+        self.tituloDetalleDestino.config(width=30, height=3, pady=0)
+        self.tituloDetalleDestino.place(x=10, y=540)
+
+
+        self.textoDisponiblidad = tk.Label(self, width=30, height=1)
         if self.destino_seleccionado.disponibilidad == 1:
-            self.texto.insert(tk.END, 'Abierto')
+            self.textoDisponiblidad.config(text='Abierto')
         else:
-            self.texto.insert(tk.END, 'Cerrado')
-        self.texto.grid(row=0, column=0, pady=10, sticky='s')
+            self.textoDisponiblidad.config(text='Cerrado')
+        self.textoDisponiblidad.place(x=20, y=570)
+        self.textoPopularidad = tk.Label(self, width=30, height=1)
+        self.textoPopularidad.config(text=f'{self.destino_seleccionado.popularidad}')
+        self.textoPopularidad.place(x=20, y=590)
