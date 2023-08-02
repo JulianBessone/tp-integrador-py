@@ -112,15 +112,15 @@ class VistaActividades(tk.Frame):
         # Mostrar el botón "Volver" en la segunda fila (segunda fila, segunda columna)
 
         # Mostrar los tres botones adicionales en la tercera fila (tercera fila, todas las columnas)
-        boton_1 = tk.Button(
-            sub_frame_1,
-            text="Ver Evento",
-            command=self.funcion_boton_1,
-            width=5,
-            height=2,
-            font=("Arial", 10),
-        )
-        boton_1.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
+        # boton_1 = tk.Button(
+        #     sub_frame_1,
+        #     text="Ver Evento",
+        #     command=self.funcion_boton_1,
+        #     width=5,
+        #     height=2,
+        #     font=("Arial", 10),
+        # )
+        # boton_1.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
 
         # boton_2 = tk.Button(
         #     sub_frame_1,
@@ -136,11 +136,11 @@ class VistaActividades(tk.Frame):
             sub_frame_1,
             text="Volver",
             command=self.controlador.regresar_destinos,
-            width=5,
-            height=2,
+            # width=5,
+            # height=2,
             font=("Arial", 10, "bold"),
-            bg="blue",
-            fg="white",
+            # bg="blue",
+            # fg="white",
         )
         boton_regresar.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
