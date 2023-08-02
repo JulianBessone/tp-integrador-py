@@ -2,6 +2,7 @@
 FUNCION PARA TRANSFORMAR UNA LISTA DE OBJETOS A UNA LISTA DE OBJETOS JSON
 """
 
+
 def objetos_a_json(lista):
     resultadoLista = []
     for object in lista:
