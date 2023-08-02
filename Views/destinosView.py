@@ -1,3 +1,4 @@
+
 #Importamos tkinter con el alias tk:
 import tkinter as tk
 from tkintermapview import TkinterMapView
@@ -55,6 +56,7 @@ class DestinosView(tk.Frame):
 
         self.destinos_listbox.grid(row=0, column=0, padx=10, pady=10, sticky="n")
         self.destinos_listbox.bind('<<ListboxSelect>>', self.controlador.seleccionar_destinos)
+        self.destinos_listbox.bind("<Double-Button-1>", self.seleccionar_destino)
         # self.destinos_listbox.bind('<<ListboxSelect>>', self.controlador.seleccionar_destinos_ubi)
 
         
@@ -90,3 +92,30 @@ class DestinosView(tk.Frame):
         self.textoPopularidad = tk.Label(self, width=30, height=1)
         self.textoPopularidad.config(text=f'{self.destino_seleccionado.popularidad}')
         self.textoPopularidad.place(x=20, y=590)
+        
+    def actualizar_destinos(self):
+        """
+        Actualiza la lista de destinos con los destinos obtenidos del controlador.
+        """
+        destinos = self.controlador.obtener_destinos()
+        self.listbox.delete(0, tk.END)
+        for destino in destinos:
+            self.listbox.insert(tk.END, destino.nombre)
+
+    def obtener_destino_seleccionado(self):
+        """
+        Retorna el índice del destino seleccionado en la lista.
+        """
+        indice = self.listbox.curselection()
+        if indice:
+            return indice[0]
+        else:
+            return None
+
+    def seleccionar_destino(self, event):
+        """
+        Obtiene el índice del destinoS seleccionado y llama al controlador para
+        mostrar la información del destino.
+        """
+        self.controlador.seleccionar_destino()
+
