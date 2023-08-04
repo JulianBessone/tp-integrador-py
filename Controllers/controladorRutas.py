@@ -8,12 +8,6 @@ class ControladorRutas:
         self.actividades = actividades #paso la lista de las actividades.
        
 
-    def obtener_destinos(self):
-        return self.destinos  #devuelvo la lista de destinos
-
-    def obtener_rutas(self):
-        return self.rutas  #devuelvo la lista de rutas        
-
     def regresar_inicio(self):
         self.app.cambiar_frame(self.app.vista_inicio)
 
@@ -34,13 +28,49 @@ class ControladorRutas:
             return self.rutas
 
 
-    # def seleccionar_destino(self):
-    #     """
-    #     Obtiene el índice del destino seleccionado y llama a la vista de
-    #     información para mostrar la información de la actividad.
-    #     """
-    #     indice = self.app.vista_rutas.obtener_destino_seleccionado()
-    #     if indice is not None:
-    #         destino = self.destinos[indice]  #selecciono el objeto de la lista de objetos
-    #         self.app.vista_actividades.mostrar_actividades_destino(destino) #paso el objeto a mostrar_actividades_destino
-    #         self.app.cambiar_frame(self.app.vista_actividades)
+    def mostrar_informacion_destino(self, event):
+        """
+        Muestra los ingredientes y el tipo de cocina del destino 
+        seleccionado en las etiquetas.
+        """
+        indice_seleccionado = self.app.vista_rutas.listbox_destinos.curselection()
+        indice_seleccionado = indice_seleccionado[0]
+        destino_seleccionado = self.destinos[indice_seleccionado] #objeto
+        self.app.vista_rutas.destino_seleccionado = destino_seleccionado 
+
+
+        tipo_cocina = destino_seleccionado.tipo_cocina
+        nombre = destino_seleccionado.nombre
+        self.app.vista_rutas.destino_label.config(text=f"{nombre}")
+        self.app.vista_rutas.tipo_cocina_label.config(text=f"Tipo de cocina: {tipo_cocina}")
+
+        # Obtener actividades del destino seleccionado
+        actividades_destino = [actividad.nombre for actividad in self.actividades if actividad.destino_id == destino_seleccionado.id]
+        # Actualizar etiqueta con las actividades del destino
+        self.app.vista_rutas.actividades_label.config(text=f"Actividades: {', '.join(actividades_destino)}")
+
+
+    def agregar_a_ruta(self):
+        """
+        Muestra una nueva ventana con las rutas del usuario. Al seleccionar debe
+        agregar el destino seleccionado a la ruta.
+        1 - Paso el termino a buscar
+        2- muestro una nueva vista
+
+        """        
+        print('se presiono el boton agregar a ruta en la funcion')
+        # Obtiene el término de búsqueda del input
+        #termino_busqueda = input_buscar
+
+        # Cambio la vista a la vista agregarARutasView
+        self.app.cambiar_frame(self.app.vista_agregar_a_ruta)
+        # Actualizo los resultados en base a lo que ingrese el user
+        #self.app.vista_resultados_busqueda.actualizar_resultados(termino_busqueda)
+
+    def seleccionar_ruta(self, event):
+        pass
+
+    def agregar_destino(self):
+        print('guardar el destino')
+        
+

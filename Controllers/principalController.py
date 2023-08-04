@@ -9,6 +9,7 @@ from Views.createReview import CreateReview
 from Views.destinosView import DestinosView #agregado
 from Views.actividadesView import VistaActividades #agregado
 from Views.rutasView import VistaRutas
+from Views.agregarARutasView import AgregarARutasView
 
 # Importación de Modelos
 from Models.reviews import Review
@@ -21,7 +22,7 @@ from Models.ubicaciones import Ubicacion
 
 from Controllers.controladorInicio import ControladorInicio
 from Controllers.controladorReview import ControladorReview
-from Controllers.controladorActividad import ControladorActividades #agregado
+from Controllers.controladorActividad import ControladorActividades 
 from Controllers.controladorRutas import ControladorRutas
 from Controllers.controladorDestinos import ControladorDestinos
 
@@ -48,8 +49,10 @@ class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas graf
         reviews = Review.cargar_reviews("data/reviews.json")
         self.reviews = reviews
         usuarios = Usuario.cargar_users("data/usuarios.json")
-        actividades = Actividad.cargar_actividades("data/actividades.json") #agregado
+        actividades = Actividad.cargar_actividades("data/actividades.json")
+        self.actividades = actividades
         rutas = RutaDeVisita.cargar_rutas("data/rutas.json")
+        self.rutas = rutas
         ubicaciones = Ubicacion.cargar_ubicaciones("data/ubicacion.json")
         self.ubicaciones = ubicaciones
        
@@ -70,8 +73,9 @@ class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas graf
         self.vista_reviews = ReviewsVista(self, controladorReview, reviews, destinos, usuarios)
         self.vista_cargar_review = CreateReview(self, controladorReview, reviews, destinos, usuarios)
         self.vista_destinos = DestinosView(self, controladorDestinos, destinos, ubicaciones)
-        self.vista_actividades = VistaActividades(self, controladorActividad)
-        self.vista_rutas = VistaRutas(self, controladorRutas)
+        self.vista_actividades = VistaActividades(self, controladorActividad, destinos, actividades)
+        self.vista_rutas = VistaRutas(self, controladorRutas, destinos, actividades, rutas)
+        self.vista_agregar_a_ruta = AgregarARutasView(self, controladorRutas, destinos, rutas)
 
 
         ##AJUSTES DE FRAMES
@@ -82,6 +86,7 @@ class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas graf
         self.ajustar_frame(self.vista_destinos)
         self.ajustar_frame(self.vista_actividades)
         self.ajustar_frame(self.vista_rutas)
+        self.ajustar_frame(self.vista_agregar_a_ruta)
 
 
     # FUNCION PARA AJUSTAR LOS FRAMES

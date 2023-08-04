@@ -26,7 +26,7 @@ class RutaDeVisita:
         """
         Carga una lista de rutas desde un archivo JSON.
         """
-        with open(archivo_json, "r") as archivo:
+        with open(archivo_json, "r", encoding="utf-8") as archivo:
             datos = json.load(archivo)
         return [RutaDeVisita.de_json(json.dumps(dato)) for dato in datos]
 

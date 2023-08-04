@@ -4,13 +4,15 @@ from datetime import datetime
 
 
 class VistaActividades(tk.Frame):
-    def __init__(self, master=None, controlador=None):
+    def __init__(self, app, controlador, destinos, actividades):
         """
         Crea la vista de las actividades del destino culinario.
         """
-        super().__init__(master)
-        self.master = master #le paso la aplicacion
+        super().__init__(app)
+        self.app = app #le paso la aplicacion
         self.controlador = controlador  #le paso el controlador de actividad
+        self.destinos = destinos
+        self.actividades = actividades
 
 
     def mostrar_actividades_destino(self, destino):  
@@ -99,38 +101,7 @@ class VistaActividades(tk.Frame):
         self.destino_actividades_label = tk.Label(sub_frame, text=info_actividad)
         self.destino_actividades_label.grid(row=2, column=0, sticky="nw")  # Alineación arriba a la izquierda
 
-    
-        # #Agregar etiquetas con números en cada celda de la grilla -CONTROL GRILLA
-        # for i in range(9):
-        #     for j in range(3):
-        #         numero = i * 3 + j
-        #         etiqueta = tk.Label(sub_frame, text=str(numero))
-        #         etiqueta.grid(row=i, column=j)
 
-
-
-        # Mostrar el botón "Volver" en la segunda fila (segunda fila, segunda columna)
-
-        # Mostrar los tres botones adicionales en la tercera fila (tercera fila, todas las columnas)
-        # boton_1 = tk.Button(
-        #     sub_frame_1,
-        #     text="Ver Evento",
-        #     command=self.funcion_boton_1,
-        #     width=5,
-        #     height=2,
-        #     font=("Arial", 10),
-        # )
-        # boton_1.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
-
-        # boton_2 = tk.Button(
-        #     sub_frame_1,
-        #     text="Ver Reviews",
-        #     command=self.funcion_boton_2,
-        #     width=5,
-        #     height=2,
-        #     font=("Arial", 10),
-        # )
-        #boton_2.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
 
         boton_regresar = tk.Button(
             sub_frame_1,
