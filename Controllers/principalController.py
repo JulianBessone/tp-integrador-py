@@ -1,4 +1,5 @@
 import tkinter as tk
+import customtkinter as ctk
 from tkinter import messagebox
 
 # Importación de vistas
@@ -27,9 +28,9 @@ from Controllers.controladorDestinos import ControladorDestinos
 
 
 
-class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas grafica
+class Aplicacion(ctk.CTk):  # le paso tk a la app para que tenga una interfas grafica
     def __init__(self):
-        tk.Tk.__init__(self)
+        ctk.CTk.__init__(self)
         # a la interfas la paso la instancia para poder controlarla
         # y cambiarle cosas como el titutlo
         self.iconbitmap("assets/img/burger.ico")

@@ -1,6 +1,7 @@
 
 #Importamos tkinter con el alias tk:
 import tkinter as tk
+import customtkinter as ctk
 from tkintermapview import TkinterMapView
 """ #Impotamos Themes Tkinter:
 from tkinter import ttk
