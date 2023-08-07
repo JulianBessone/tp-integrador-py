@@ -116,21 +116,10 @@ class VistaActividades(tk.Frame):
         boton_regresar.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
 
-        # Configurar las columnas del sub_frame para que tengan el mismo peso
-        sub_frame.grid_columnconfigure(0, weight=1)
-        sub_frame.grid_columnconfigure(1, weight=1)
-        sub_frame.grid_columnconfigure(2, weight=1)
+        # # Configurar las columnas del sub_frame para que tengan el mismo peso
+        # sub_frame.grid_columnconfigure(0, weight=1)
+        # sub_frame.grid_columnconfigure(1, weight=1)
+        # sub_frame.grid_columnconfigure(2, weight=1)
 
 
-
-    def funcion_boton_1(self):
-        # Código para el botón 1
-        pass
-
-    def funcion_boton_2(self):
-        # Código para el botón 2
-        pass
-
-    def funcion_boton_3(self):
-        # Código para el botón 3
-        pass        
+    

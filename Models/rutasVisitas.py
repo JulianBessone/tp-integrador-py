@@ -7,6 +7,10 @@ class RutaDeVisita:
         self.nombre = nombre_ruta
         self.destinos = destinos
 
+    def __str__(self):
+        return f"Ruta {self.id}: Nombre: {self.nombre}"
+
+
     def a_json(self):
         """
         Convierte el objeto RutaDeVisita a formato JSON.

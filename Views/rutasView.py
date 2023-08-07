@@ -58,11 +58,13 @@ class VistaRutas(tk.Frame):
         self.actividades_label.place(x=300, y=220)
 
 
-        # Crea el botón "Agregar a mi ruta" y lo agrega al contenedor
+        # Crea el botón "Agregar a mi ruta" 
+        # y el metodo agregar a ruta muestra una nueva ventana y le
+        # paso el objeto seleccionado que viene de mostrar informacion en el controlador
         self.boton_agregar_ruta = tk.Button(
             self, 
-            text="Agregar a mi ruta", 
-            command=lambda: self.controlador.agregar_a_ruta()
+            text="Agregar destino y ver rutas", 
+            command=lambda: self.controlador.agregar_a_ruta(self.destino_seleccionado)
         )
 
         self.boton_agregar_ruta.place(x=300, y=300)
