@@ -15,7 +15,9 @@ class ControladorReview:
         destino_seleccionado= self.destinos[indice_seleccionado]
         self.app.vista_cargar_review.destino_seleccionado = destino_seleccionado
 
-        label_review = tk.Label(self.app.vista_cargar_review, text= f"Ingrese aquí su reseña del destino : {destino_seleccionado.nombre}")
+        self.app.vista_cargar_review.createReviewForm(destino_seleccionado)
+
+        """label_review = tk.Label(self.app.vista_cargar_review, text= f"Ingrese aquí su reseña del destino : {destino_seleccionado.nombre}")
         label_review.pack()
         #Creacion de entry para que el usuario ingrese su comentario
         #entry_review = tk.Entry(self.app.vista_cargar_review)
@@ -33,7 +35,7 @@ class ControladorReview:
 
         # Crea el botón para guardar el comentario
         boton_guardar = tk.Button(self.app.vista_cargar_review, text="Guardar", command=lambda: self.guardar_comentario(text_review.get("1.0", tk.END)))
-        boton_guardar.pack()
+        boton_guardar.pack()"""
         # DESCOMENTAR PARA LUEGO PONER LA CALIFICACION (DE 1 A 5)
 """ 
     def guardar_comentario(self, comentario):

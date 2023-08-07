@@ -19,8 +19,6 @@ class CreateReview(tk.Frame):
     def create_widgets(self):
         self.label_titulo = tk.Label(self, text="Reviews", font=("Arial", 20))
         self.label_titulo.pack(pady=10)
-        
-        ## TODO - descomentar , conectarlo a la base de datos y hacer que funcione  
 
         """ # # listbox de posibles destinos"""
         self.label_destino = tk.Label(self, text="Destino")
@@ -38,6 +36,17 @@ class CreateReview(tk.Frame):
         for destino in self.destinos:
              if destino.nombre == self.destino_listbox.get(tk.ACTIVE):
                 id_destino = destino.id
+    
+    def createReviewForm(self, destino):
+        if hasattr(self.app.vista_cargar_review, 'labelFormTitle'):
+            self.labelFormTitle.destroy()
+            self.text_review.destroy()
+           
+        self.app.vista_cargar_review.labelFormTitle = tk.Label(self, text= f"Ingrese aquí su reseña del destino : {destino.nombre}")
+        self.app.vista_cargar_review.labelFormTitle.pack()
+        self.text_review = tk.Text(self.app.vista_cargar_review, width=50, height=5)
+        self.text_review.pack()
+
         
      # # listbox de posibles destinos"""
         #self.label_review = tk.Label(self, text="Ingrese aquí su reseña de: ")

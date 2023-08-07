@@ -27,5 +27,4 @@ class Review:
     def cargar_reviews(archivo_json):
         with open(archivo_json, "r", encoding="utf-8") as archivo:
             datos = json.load(archivo)
-            print(datos)
         return [Review.de_json(json.dumps(dato)) for dato in datos]
