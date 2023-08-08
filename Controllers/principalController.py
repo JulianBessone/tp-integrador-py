@@ -36,7 +36,8 @@ class Aplicacion(ctk.CTk):  # le paso tk a la app para que tenga una interfas gr
         self.iconbitmap("assets/img/burger.ico")
         self.title("FoodApp")
         self.geometry("1080x720")
-        self.resizable(True, True)
+        self.config(bg='#F39116')
+        self.resizable(False, False)  # Evita que los usuarios redimensionen la ventana
         self.inicializar()
 
         self.cambiar_frame(self.vista_inicio)       
