@@ -87,10 +87,14 @@ class AgregarARutasView(tk.Frame):
     def mostrar_destinos_ruta(self, event):
         """
         Selecciona los destinos de la ruta seleccionada
+        self.cargarDestinosRuta()
         """         
         self.destinos_ruta_listbox.delete(0, tk.END)  # Limpiar la lista actual
 
+
+        #en indice seleccionado pongo el indice de la lista
         indice_seleccionado = self.app.vista_agregar_a_ruta.rutas_listbox.curselection()
+        #si hay algo seleccionado
         if indice_seleccionado:
             indice_seleccionado = indice_seleccionado[0] #el primer elemento de la tupla que devuelve curselection
             # de la lista tomo el valor del elemento seleccionado
@@ -108,7 +112,13 @@ class AgregarARutasView(tk.Frame):
             # Muestro el listado de los destinos de la ruta
             # la instancia de la ruta seleccionada esta en ruta_seleccionada, 
             # debo mostrar los destinos de esa ruta
-            for destino in self.destinos:
+            self.cargarDestinosRuta(ruta_seleccionada)
+
+    def cargarDestinosRuta(self, ruta_seleccionada):
+        
+        self.destinos_ruta_listbox.delete(0, tk.END)  # Limpiar la lista actual
+
+        for destino in self.destinos:
                  for iddestino in ruta_seleccionada.destinos:
                      if destino.id == iddestino:
                         #print("destino: ", destino.id, " ", destino.nombre, " ", destino.tipo_cocina, " ", destino.popularidad)
@@ -121,9 +131,7 @@ class AgregarARutasView(tk.Frame):
                         self.destinos_ruta_listbox.insert(tk.END, popularidad)
                         self.destinos_ruta_listbox.insert(tk.END, precios)
                         self.destinos_ruta_listbox.insert(tk.END, "------------")
-
-
-
+               
     def mostrar_ventana_nueva_ruta(self):
         # Crear una ventana Toplevel para la nueva ruta
         ventana_nueva_ruta = tk.Toplevel(self)

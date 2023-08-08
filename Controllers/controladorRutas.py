@@ -98,7 +98,7 @@ class ControladorRutas:
 
 
         #ESTO NO FUNCIONA!!
-        self.app.vista_agregar_a_ruta.mostrar_destinos_rutas()
+        self.app.vista_agregar_a_ruta.cargarDestinosRuta(ruta_seleccionada)
 
 
     def agregar_ruta_a_json(self, nueva_ruta):

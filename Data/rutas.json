@@ -30,12 +30,19 @@
     {
         "id_ruta": 3,
         "nombre_ruta": "tu ruta es mi ruta",
-        "destinos": []
+        "destinos": [
+            6,
+            3
+        ]
     },
     {
         "id_ruta": 4,
         "nombre_ruta": "esta es una nueva ruta",
-        "destinos": []
+        "destinos": [
+            2,
+            3,
+            5
+        ]
     },
     {
         "id_ruta": 5,
@@ -43,6 +50,15 @@
         "destinos": [
             5,
             9
+        ]
+    },
+    {
+        "id_ruta": 6,
+        "nombre_ruta": "ruta6",
+        "destinos": [
+            4,
+            9,
+            8
         ]
     }
 ]
