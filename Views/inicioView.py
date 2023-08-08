@@ -45,7 +45,7 @@ class InicioView(ctk.CTkFrame):
 
         # Input para que el usuario busque restaurantes
         self.input_buscar = ctk.CTkEntry(self, width=550)
-        self.input_buscar.configure(fg_color='#E8DFDA')
+        self.input_buscar.configure(fg_color='#E8DFDA', text_color='#23272d')
         self.input_buscar.place(x=9, y=80)
 
         # Botón para realizar la búsqueda
@@ -106,6 +106,6 @@ class InicioView(ctk.CTkFrame):
         #self.label_destinos.pack()
 
         destinos_text = "\n".join([f"- {destino.nombre}" for destino in self.destinos])
-        self.reviews_label = ctk.CTkLabel(self, text=destinos_text, justify=tk.LEFT)
+        self.reviews_label = ctk.CTkLabel(self, text=f'{destinos_text}', justify=tk.LEFT)
         self.reviews_label.place(x=300, y=250)
         #self.reviews_label.pack()
