@@ -45,3 +45,7 @@ class ControladorReview:
         self.app.reviews.append(reviewNueva)
         # # cambio a la vista de inicio
         self.app.cambiar_frame(self.app.vista_inicio)
+    
+    def regresar_inicio(self):
+        self.app.cambiar_frame(self.app.vista_inicio)
+
