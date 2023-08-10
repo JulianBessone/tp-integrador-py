@@ -1,4 +1,5 @@
 import tkinter as tk
+import customtkinter as ctk
 from Models.reviews import Review
 
 class ControladorReview:

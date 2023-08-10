@@ -1,4 +1,5 @@
 import tkinter as tk
+import customtkinter as ctk
 from tkinter import messagebox
 
 # Importación de vistas
@@ -27,15 +28,16 @@ from Controllers.controladorDestinos import ControladorDestinos
 
 
 
-class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas grafica
+class Aplicacion(ctk.CTk):  # le paso tk a la app para que tenga una interfas grafica
     def __init__(self):
-        tk.Tk.__init__(self)
+        ctk.CTk.__init__(self)
         # a la interfas la paso la instancia para poder controlarla
         # y cambiarle cosas como el titutlo
         self.iconbitmap("assets/img/burger.ico")
         self.title("FoodApp")
         self.geometry("1080x720")
-        self.resizable(True, True)
+        self.config(bg='#F39116')
+        self.resizable(False, False)  # Evita que los usuarios redimensionen la ventana
         self.inicializar()
 
         self.cambiar_frame(self.vista_inicio)       
@@ -64,7 +66,7 @@ class Aplicacion(tk.Tk):  # le paso tk a la app para que tenga una interfas graf
         controladorRutas = ControladorRutas(self, destinos, rutas, actividades)
         
         ##VISTAS
-        self.vista_inicio = InicioView(self, controladorInicio, destinos)
+        self.vista_inicio = InicioView(self, controladorInicio, destinos, ubicaciones)
         # A la vista de inicio le paso el controlador de su vista y la data de destinos.
         self.vista_resultados_busqueda = ResultadosBusquedaView(self, destinos)
         self.vista_reviews = ReviewsVista(self, controladorReview, reviews, destinos, usuarios)
