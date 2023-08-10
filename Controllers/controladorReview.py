@@ -1,4 +1,5 @@
 import tkinter as tk
+import customtkinter as ctk
 from Models.reviews import Review
 
 import tkinter as tk
@@ -22,6 +23,7 @@ class ControladorReview:
         self.app.vista_cargar_review.destino_seleccionado = destino_seleccionado
 
         self.app.vista_cargar_review.createReviewForm(destino_seleccionado)
+
 
     def cargar_review(self, review):
         if review["calificacion"] < 3:
@@ -48,4 +50,5 @@ class ControladorReview:
     
     def regresar_inicio(self):
         self.app.cambiar_frame(self.app.vista_inicio)
+
 

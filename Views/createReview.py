@@ -1,6 +1,7 @@
 import tkinter as tk
 import customtkinter as ctk
 
+
 #class CreateReview(tk.Frame):
 class CreateReview(ctk.CTkFrame):
     def __init__(self, app, controlador, reviews, destinos, usuarios):
@@ -23,7 +24,6 @@ class CreateReview(ctk.CTkFrame):
         self.label_titulo = ctk.CTkLabel(self, text="Agregar Reseña", font=("Helvetica", 24,'bold'))
         self.label_titulo.pack(pady=10)
 
-        ## TODO - descomentar , conectarlo a la base de datos y hacer que funcione
 
         """ # # listbox de posibles destinos"""
         #self.label_destino = tk.Label(self, text="Destino")
@@ -84,10 +84,7 @@ class CreateReview(ctk.CTkFrame):
             self, text="Calificacion",font=("Helvetica", 15,'bold')
         )
         self.app.vista_cargar_review.label_calificacion.pack(pady=5)
-        
-        # self.app.vista_cargar_review.listbox_calificacion = tk.Listbox(
-        #     self, width=2, height=1
-        # )
+
         self.app.vista_cargar_review.listbox_calificacion = tk.Listbox(
             self, width=2, height=5
         )
@@ -98,23 +95,9 @@ class CreateReview(ctk.CTkFrame):
             )
 
         self.app.vista_cargar_review.listbox_calificacion.pack(pady=5)
-        #self.app.vista_cargar_review.listbox_calificacion.configure(background='#FFE5D4')
         self.app.vista_cargar_review.listbox_calificacion.configure(background='#E8DFDA')
 
-        # self.app.vista_cargar_review.boton_cargar_review = tk.Button(
-        #     self,
-        #     text="Cargar Review",
-        #     command=lambda: self.controlador.cargar_review(
-        #         {
-        #             "nameDestino": destino.nombre,
-        #             "idDestino": destino.id,
-        #             "text": self.app.vista_cargar_review.text_review.get("1.0", tk.END),
-        #             "calificacion": self.app.vista_cargar_review.listbox_calificacion.get(
-        #                 tk.ACTIVE
-        #             ),
-        #         }
-        #     ),
-        # )
+
 
         self.app.vista_cargar_review.boton_cargar_review = ctk.CTkButton(
             self,
@@ -133,12 +116,6 @@ class CreateReview(ctk.CTkFrame):
         self.app.vista_cargar_review.boton_cargar_review.configure(fg_color='#FF5722')
         self.app.vista_cargar_review.boton_cargar_review.pack(padx=5,pady=5)
 
-        # volver atras
-        # self.app.vista_cargar_review.boton_volver = tk.Button(
-        #     self,
-        #     text="Volver",
-        #     command=lambda: self.app.cambiar_frame(self.app.vista_inicio),
-        # )
 
         self.app.vista_cargar_review.boton_volver = ctk.CTkButton(
             self,
@@ -147,3 +124,20 @@ class CreateReview(ctk.CTkFrame):
         )
         self.app.vista_cargar_review.boton_volver.configure(fg_color='#FF5722')
         self.app.vista_cargar_review.boton_volver.pack(padx=5,pady=6)
+
+
+        for destino in self.destinos:
+             if destino.nombre == self.destino_listbox.get(tk.ACTIVE):
+                id_destino = destino.id
+    
+    def createReviewForm(self, destino):
+        if hasattr(self.app.vista_cargar_review, 'labelFormTitle'):
+            self.labelFormTitle.destroy()
+            self.text_review.destroy()
+           
+        self.app.vista_cargar_review.labelFormTitle = tk.Label(self, text= f"Ingrese aquí su reseña del destino : {destino.nombre}")
+        self.app.vista_cargar_review.labelFormTitle.pack()
+        self.text_review = tk.Text(self.app.vista_cargar_review, width=50, height=5)
+        self.text_review.pack()
+
+

@@ -1,4 +1,5 @@
 import tkinter as tk
+import customtkinter as ctk
 from tkinter import messagebox
 
 
@@ -18,7 +19,7 @@ class ControladorInicio:
         self.app.cambiar_frame(self.app.vista_reviews)
 
     def mostrar_rutas(self):
-        self.app.cambiar_frame(self.app.vista_rutas)    
+        self.app.cambiar_frame(self.app.vista_rutas)
 
     def buscar_restaurantes(self, input_buscar):
         # Obtiene el término de búsqueda del input

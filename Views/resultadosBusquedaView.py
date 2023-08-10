@@ -1,4 +1,5 @@
 import tkinter as tk
+import customtkinter as ctk
 
 
 class ResultadosBusquedaView(tk.Frame):
@@ -35,7 +36,8 @@ class ResultadosBusquedaView(tk.Frame):
         self.resultados_listbox.pack(pady=5)
 
         # Botón para volver a la vista anterior (InicioView)
-        self.boton_volver = tk.Button(self, text="Volver", command=self.volver_a_inicio)
+        # self.boton_volver = tk.Button(self, text="Volver", command=self.volver_a_inicio)
+        self.boton_volver = tk.Button(self, text='Volver', command=lambda:self.volver_al_inicio())
         self.boton_volver.pack(pady=5)
 
     def actualizar_resultados(self, termino_busqueda):
@@ -49,7 +51,10 @@ class ResultadosBusquedaView(tk.Frame):
         for resultado in resultados_encontrados:
             self.resultados_listbox.insert(tk.END, resultado.nombre)
 
-    def volver_a_inicio(self):
-        # Destruye la ventana actual (ResultadosBusquedaView)
-        # y muestra la vista anterior (InicioView)
-        self.destroy()
+    # def volver_a_inicio(self):
+    #     # Destruye la ventana actual (ResultadosBusquedaView)
+    #     # y muestra la vista anterior (InicioView)
+    #     self.destroy()
+
+    def volver_al_inicio(self):
+        self.app.cambiar_frame(self.app.vista_inicio)
