@@ -30,7 +30,7 @@
     },
     {
         "id_ruta": 3,
-        "nombre_ruta": "tu ruta es mi ruta",
+        "nombre_ruta": "Ruta para lunes",
         "destinos": [
             6,
             3
@@ -38,7 +38,7 @@
     },
     {
         "id_ruta": 4,
-        "nombre_ruta": "esta es una nueva ruta",
+        "nombre_ruta": "Ruta para martes",
         "destinos": [
             2,
             3,
@@ -47,7 +47,7 @@
     },
     {
         "id_ruta": 5,
-        "nombre_ruta": "ruta 5",
+        "nombre_ruta": "Ruta para miercoles",
         "destinos": [
             5,
             9,
@@ -56,7 +56,7 @@
     },
     {
         "id_ruta": 6,
-        "nombre_ruta": "ruta6",
+        "nombre_ruta": "Ruta para jueves",
         "destinos": [
             4,
             9,
@@ -66,14 +66,14 @@
     },
     {
         "id_ruta": 7,
-        "nombre_ruta": "ruta 7",
+        "nombre_ruta": "Ruta para viernes",
         "destinos": [
             2
         ]
     },
     {
         "id_ruta": 8,
-        "nombre_ruta": "ruta 9",
+        "nombre_ruta": "Ruta para sabado",
         "destinos": [
             7
         ]
