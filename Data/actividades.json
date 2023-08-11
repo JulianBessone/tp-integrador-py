@@ -1,31 +1,31 @@
 [
     {
         "id_actividad": 1,
-        "nombre": "Presentacion de Espectaculo de Ahyre",
+        "nombre": "Fines de semana a todo jazz",
         "destino_id": 1,
         "hora_inicio": "2023-07-04T09:00:00"
     },
     {
         "id_actividad": 2,
-        "nombre": "Masterclass de Masa de Pizza",
+        "nombre": "Masterclass de Barista",
         "destino_id": 2,
         "hora_inicio": "2023-08-05T18:30:00"
     },
     {
         "id_actividad": 3,
-        "nombre": "Masterclass de Tipos de Pizza",
+        "nombre": "Degustación de distintos tipos de café",
         "destino_id": 2,
         "hora_inicio": "2023-08-12T18:30:00"
     }, 
     {
         "id_actividad": 4,
-        "nombre": "Presentación de nuevos Grupos Folkloricos",
+        "nombre": "Noche de Rock con Gardenia",
         "destino_id": 3,
-        "hora_inicio": "2023-08-12T18:30:00"
+        "hora_inicio": "2023-08-12T21:30:00"
     }, 
     {
         "id_actividad": 5,
-        "nombre": "Guitarreada entre amigos",
+        "nombre": "Degustacion de cervezas artesanales",
         "destino_id": 3,
         "hora_inicio": "2023-08-16T18:30:00"
     }           
