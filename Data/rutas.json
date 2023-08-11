@@ -9,7 +9,8 @@
             10,
             8,
             7,
-            11
+            11,
+            3
         ]
     },
     {
@@ -49,7 +50,8 @@
         "nombre_ruta": "ruta 5",
         "destinos": [
             5,
-            9
+            9,
+            3
         ]
     },
     {
@@ -58,7 +60,22 @@
         "destinos": [
             4,
             9,
-            8
+            8,
+            2
+        ]
+    },
+    {
+        "id_ruta": 7,
+        "nombre_ruta": "ruta 7",
+        "destinos": [
+            2
+        ]
+    },
+    {
+        "id_ruta": 8,
+        "nombre_ruta": "ruta 9",
+        "destinos": [
+            7
         ]
     }
 ]

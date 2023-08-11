@@ -1,6 +1,8 @@
 from Models.rutasVisitas import RutaDeVisita
 from tkinter import messagebox
+from datetime import datetime
 import json
+from PIL import Image, ImageTk
 
 class ControladorRutas:
     def __init__(self, app, destinos, rutas, actividades):
@@ -42,13 +44,33 @@ class ControladorRutas:
 
         tipo_cocina = self.destino_seleccionado.tipo_cocina
         nombre = self.destino_seleccionado.nombre
-        self.app.vista_rutas.destino_label.config(text=f"{nombre}")
-        self.app.vista_rutas.tipo_cocina_label.config(text=f"Tipo de cocina: {tipo_cocina}")
+        self.app.vista_rutas.destino_label.configure(text=f"{nombre}")
+        self.app.vista_rutas.tipo_cocina_label.configure(text=f"{tipo_cocina}")
 
         # Obtener actividades del destino seleccionado
-        actividades_destino = [actividad.nombre for actividad in self.actividades if actividad.destino_id == self.destino_seleccionado.id]
+        #actividades_destino = [actividad.nombre for actividad in self.actividades if actividad.destino_id == self.destino_seleccionado.id]
+
+        actividades_destino=""
+
+        for actividad in self.actividades:
+            if actividad.destino_id == self.destino_seleccionado.id:
+                # Convertir la fecha a un objeto datetime
+                fecha_hora_obj = datetime.strptime(actividad.hora_inicio, "%Y-%m-%dT%H:%M:%S")
+                # Formatear la fecha en formato dd/mm/aaaa
+                fecha = fecha_hora_obj.strftime("%d/%m/%Y")
+                # Formatear la hora en formato hh:mm
+                hora = fecha_hora_obj.strftime("%H:%M")            
+                actividades_destino = actividades_destino + f"{fecha} - {hora} \n{actividad.nombre}\n\n"
+
         # Actualizar etiqueta con las actividades del destino
-        self.app.vista_rutas.actividades_label.config(text=f"Actividades: {', '.join(actividades_destino)}")
+        if actividades_destino =='':
+            actividades_destino ='No hay actividades programadas'
+        self.app.vista_rutas.actividades_label.configure(text=f"{actividades_destino}")
+
+        # Obtener la URL de la imagen del destino desde el JSON
+        imagen_url = self.destino_seleccionado.imagen
+        self.app.vista_rutas.cargar_imagen(imagen_url)
+
 
 
     def agregar_a_ruta(self, destino_seleccionado):
@@ -57,8 +79,11 @@ class ControladorRutas:
         agregar el destino seleccionado a la ruta.
         """        
         # Cambio la vista a la vista agregarARutasView
+        if not destino_seleccionado:
+            messagebox.showinfo("Aviso", "Seleccione un destino.")
+            return
         self.app.cambiar_frame(self.app.vista_agregar_a_ruta)
-        self.app.vista_agregar_a_ruta.titulo.config(text=f"Destino seleccionado: {self.destino_seleccionado.nombre}")
+        self.app.vista_agregar_a_ruta.titulo.configure(text=f"Destino seleccionado: {self.destino_seleccionado.nombre}")
         self.app.destino_seleccionado = destino_seleccionado
 
 

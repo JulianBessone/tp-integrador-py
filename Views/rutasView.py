@@ -1,9 +1,11 @@
 from tkinter import Frame, Label, Grid, N, S, E, W
 import tkinter as tk
+import customtkinter as ctk
 from datetime import datetime
+from PIL import Image, ImageTk
 
 
-class VistaRutas(tk.Frame):
+class VistaRutas(ctk.CTkFrame):
     def __init__(self, app, controladorRutas, destinos, actividades, rutas):
         super().__init__(app)
         self.app = app
@@ -16,66 +18,84 @@ class VistaRutas(tk.Frame):
         """AQUI CAMBIO EL TAMAÑO Y EL TITULO DE LA VENTANA"""
         self.app.title("FoodTravels App - Destinos")
         self.app.geometry("885x620")
-        self.app.resizable(1, 1)
+        self.configure(fg_color='#F39116')
+        #self.app.resizable(1, 1)
 
         self.create_widgets()
 
 
     def create_widgets(self):                
 
-        self.titulo = tk.Label(self, text="Planifica tu visita", font=("Arial", 20))
-        self.titulo.place(x=200,y=20)
+        self.titulo = ctk.CTkLabel(self, text="Planifica tu visita", font=("Arial", 30, 'bold'))
+        self.titulo.place(x=300,y=20)
 
-        self.titulo = tk.Label(self, text="Busca por tipo de comida \n o actividad", font=("Arial", 14))
-        self.titulo.place(x=10, y=90, anchor=tk.W)
+
+        self.titulo = ctk.CTkLabel(self, text="Busca tu destino ingresando \n el tipo de comida que te gusta o actividad que te interesa \n y agregalo a tu ruta", font=("Arial", 16, 'bold'))
+        self.titulo.place(x=210, y=60)
+
+        self.titulo = ctk.CTkLabel(self, text="Ingresa Tipo de comida o Actividad", font=("Arial", 14, 'bold'))
+        self.titulo.place(x=10, y=130)
 
         # Agregar un cuadro de texto para el buscador
-        self.buscador_entrada = tk.Entry(self, width=40)
-        self.buscador_entrada.place(x=10, y=120)
+        self.buscador_entrada = ctk.CTkEntry(self, width=250)
+        self.buscador_entrada.place(x=10, y=160)
+        self.buscador_entrada.configure(fg_color='#E8DFDA', text_color='#23272d')
 
         # Asociar el evento de escritura al buscador
         self.buscador_entrada.bind("<KeyRelease>", self.filtrar_destinos)
 
         #listabox de destinos
-        self.listbox_destinos = tk.Listbox(self, width=35, font=("Arial", 10))
-        self.listbox_destinos.place(x=10, y=150)
+        self.listbox_destinos = tk.Listbox(self, width=35, height=15, bg="#E8DFDA", font=("Arial", 10))
+        self.listbox_destinos.place(x=10, y=190)
 
         for destino in self.destinos:
             self.listbox_destinos.insert(tk.END, destino.nombre)
 
         self.listbox_destinos.bind("<<ListboxSelect>>", self.controlador.mostrar_informacion_destino)
-        self.listbox_destinos.place(x=10, y=150)  
+
 
 
         # Etiquetas para mostrar los ingredientes y el tipo de cocina del destino seleccionado
-        self.destino_label = tk.Label(self, text="", font=("Arial", 12))
-        self.destino_label.place(x=300, y=150)
+        self.destino_label = ctk.CTkLabel(self, text="Destino", font=("Arial", 20, 'bold'), text_color="#267166")
+        self.destino_label.place(x=300, y=130)
 
-        self.tipo_cocina_label = tk.Label(self, text="", font=("Arial", 10))
-        self.tipo_cocina_label.place(x=300, y=190)
+        self.tipo_cocina_titulo = ctk.CTkLabel(self, text="Tipo de cocina: ", font=("Arial", 16, 'bold'))
+        self.tipo_cocina_titulo.place(x=300, y=170)
 
-        self.actividades_label = tk.Label(self, text="", font=("Arial", 10))
-        self.actividades_label.place(x=300, y=220)
+        self.tipo_cocina_label = ctk.CTkLabel(self, text="", font=("Arial", 14))
+        self.tipo_cocina_label.place(x=300, y=200)
+
+        self.actividades_titulo = ctk.CTkLabel(self, text="Actividades Programadas", font=("Arial", 16, 'bold'))
+        self.actividades_titulo.place(x=300, y=230)
+
+        self.actividades_label = ctk.CTkLabel(self, text="", font=("Arial", 14), justify="left")
+        self.actividades_label.place(x=300, y=260)
+
+        imagen = ctk.CTkImage(Image.open('assets/img/food-travel-app.jpg'), size=(250, 250))
+        self.imagen_label = ctk.CTkLabel(self, image=imagen, text="")
+        self.imagen_label.place(x=600, y=170)
 
 
         # Crea el botón "Agregar a mi ruta" 
         # y el metodo agregar a ruta muestra una nueva ventana y le
         # paso el objeto seleccionado que viene de mostrar informacion en el controlador
-        self.boton_agregar_ruta = tk.Button(
+        self.boton_agregar_ruta = ctk.CTkButton(
             self, 
             text="Agregar destino y ver rutas", 
             command=lambda: self.controlador.agregar_a_ruta(self.destino_seleccionado)
         )
 
-        self.boton_agregar_ruta.place(x=300, y=300)
+        self.boton_agregar_ruta.place(x=300, y=450)
+        self.boton_agregar_ruta.configure(fg_color="#FF5722")
 
 
 
         # Crea el botón "Ir a Inicio" y lo agrega al contenedor
-        self.boton_inicio = tk.Button(
-             self, text="Ir a Inicio", command=self.controlador.regresar_inicio
+        self.boton_inicio = ctk.CTkButton(
+             self, text="Volver", command=self.controlador.regresar_inicio
         )
-        self.boton_inicio.place(x=400,y=420)
+        self.boton_inicio.place(x=700,y=450)
+        self.boton_inicio.configure(fg_color="#FF5722")
 
 
 
@@ -96,7 +116,15 @@ class VistaRutas(tk.Frame):
         for destino in destinos_filtrados:
             self.listbox_destinos.insert(tk.END, destino.nombre)
 
+    def cargar_imagen(self, imagen_url):
+        # Cargar la imagen desde la URL usando Pillow
+        imgPath = f'assets/img/{imagen_url}'
+        imagen = Image.open(imgPath)
+        imagen = ctk.CTkImage(imagen, size=(250,250))
+        self.imagen_label = ctk.CTkLabel(self, image=imagen, text="")
+        self.imagen_label.place(x=600, y=170)
 
+ 
 
 
 

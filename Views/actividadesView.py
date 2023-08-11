@@ -1,9 +1,10 @@
 import tkinter as tk
+import customtkinter as ctk
 from PIL import Image, ImageTk
 from datetime import datetime
 
 
-class VistaActividades(tk.Frame):
+class VistaActividades(ctk.CTkFrame):
     def __init__(self, app, controlador, destinos, actividades):
         """
         Crea la vista de las actividades del destino culinario.
@@ -13,18 +14,12 @@ class VistaActividades(tk.Frame):
         self.controlador = controlador  #le paso el controlador de actividad
         self.destinos = destinos
         self.actividades = actividades
+        self.configure(fg_color='#F39116')
+
+        self.create_widgets()
 
 
-    def mostrar_actividades_destino(self, destino):  
-        """
-        el parametro destino que recibe es la instancia del objeto
-        Muestra la información del destino recibido como parámetro.
-        """       
-
-
-        #info = f"Destino: {destino.id} - {destino.nombre}"
-        info = destino.nombre #propiedad nombre del objeto
-        info_actividad = ""
+    def create_widgets(self):
 
         #CONFIGURACION DE LA GRILLA 2X2
 
@@ -34,29 +29,57 @@ class VistaActividades(tk.Frame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1) 
         #Crear un nuevo Frame dentro de la celda (fila 0, columna 1)
-        sub_frame = tk.Frame(self)
-        sub_frame.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
+        self.sub_frame = ctk.CTkFrame(self)
+        self.sub_frame.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
+        self.sub_frame.configure(fg_color='#F39116') 
         # Configurar las filas y columnas de la nueva grilla (sub_frame) 9X1
  
         for i in range(9):
-            sub_frame.grid_rowconfigure(i, weight=1)
+            self.sub_frame.grid_rowconfigure(i, weight=1)
 
         # Crear un nuevo Frame dentro de la celda (fila 1, columna 0) que ocupe las dos columnas
-        sub_frame_1 = tk.Frame(self)
-        sub_frame_1.grid(row=1, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
+        self.sub_frame_1 = ctk.CTkFrame(self)
+        self.sub_frame_1.grid(row=1, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
+        self.sub_frame_1.configure(fg_color='#F39116')
 
         # Configurar las columnas de la nueva grilla (sub_frame_1) 1X3
         for i in range(3):
-            sub_frame_1.grid_columnconfigure(i, weight=1)
-        #fin CONFIGURACION GRILLA          
+            self.sub_frame_1.grid_columnconfigure(i, weight=1)
+        #fin CONFIGURACION GRILLA                  
+
+        #MOSTRAR DESTINO SELECCIONADO
+        self.destino_label = ctk.CTkLabel(self.sub_frame, text="", font=("Arial", 22, 'bold'), text_color="#267166")
+        self.destino_label.place(x=100,y=20)
+
+        self.actividades_label = ctk.CTkLabel(self.sub_frame, text="Actividades programadas", font=("Arial", 16, 'bold'))
+        self.actividades_label.place(x=100,y=60)
+
+        self.destino_actividades_label = ctk.CTkLabel(self.sub_frame, text="", justify="left")
+        self.destino_actividades_label.place(x=100, y=100)
+
+        boton_regresar = ctk.CTkButton(
+            self.sub_frame_1,
+            text="Volver",
+            command=self.controlador.regresar_destinos,
+            font=("Arial", 12, "bold"),
+        )
+
+        boton_regresar.place(x=650,y=100)
+        boton_regresar.configure(fg_color="#FF5722")
 
 
-        #IMAGEN - la imagen iria en fila 0 columna 0        
+    def mostrar_actividades_destino(self, destino):  
+        """
+        el parametro destino que recibe es la instancia del objeto
+        Muestra la información del destino recibido como parámetro.
+        """       
+        info = destino.nombre #propiedad nombre del objeto
+        info_actividad = ""
+
         # Obtener la URL de la imagen del destino desde el JSON
         imagen_url = destino.imagen  
         
         # Cargar la imagen desde la URL usando Pillow
-        # la imagen iria en la columna 0 fila 0
         try:
             imgPath = f'assets/img/{imagen_url}'
             imagen = Image.open(imgPath)
@@ -64,13 +87,13 @@ class VistaActividades(tk.Frame):
             ancho=400
             alto=400
             imagen = imagen.resize((ancho, alto))
-
-            imagen = ImageTk.PhotoImage(imagen)
+    
+            imagen = ctk.CTkImage(imagen, size=(ancho, alto))
 
             # Crear una etiqueta para mostrar la imagen
-            self.imagen_label = tk.Label(self, image=imagen)
+            self.imagen_label = ctk.CTkLabel(self, image=imagen, text="")
             self.imagen_label.image = imagen  # Mantener una referencia para evitar que la imagen se borre
-            self.imagen_label.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
+            self.imagen_label.place(x=20, y=20)
 
         except Exception as e:
             # Si ocurre algún error al cargar la imagen, mostrar un mensaje
@@ -78,15 +101,10 @@ class VistaActividades(tk.Frame):
             self.imagen_label = None    
         #fin IMAGEN    
 
-        #INFORMACION DEL DESTINO A LA DERECHA 
+        #INFORMACION DEL DESTINO 
+        # Titulo del restaurant escogido        
+        self.destino_label.configure(text=info)
 
-        # Mostrar el texto del destino en la segunda celda de la nueva grilla (sub_frame)        
-        self.destino_label = tk.Label(sub_frame, text=info, justify=tk.LEFT, font=("Arial", 20))
-        self.destino_label.grid(row=0, column=0, sticky="nw")  # Alineación arriba a la izquierda
-
-        # Mostrar el texto "Actividades programadas" en la segunda fila del sub_fram
-        actividades_label = tk.Label(sub_frame, text="Actividades programadas", justify=tk.LEFT, font=("Arial", 16))
-        actividades_label.grid(row=1, column=0, sticky="nsew")
 
         actividades = self.controlador.obtener_actividades_destino(destino.id)
         for actividad in actividades:
@@ -96,30 +114,11 @@ class VistaActividades(tk.Frame):
             fecha = fecha_hora_obj.strftime("%d/%m/%Y")
             # Formatear la hora en formato hh:mm
             hora = fecha_hora_obj.strftime("%H:%M")            
-            info_actividad = info_actividad + f"{fecha}\n{actividad.nombre} - Inicia a las {hora}\n"
+            info_actividad = info_actividad + f"{fecha}\n{actividad.nombre} - Inicia a las {hora}\n\n"
       
-        self.destino_actividades_label = tk.Label(sub_frame, text=info_actividad)
-        self.destino_actividades_label.grid(row=2, column=0, sticky="nw")  # Alineación arriba a la izquierda
-
-
-
-        boton_regresar = tk.Button(
-            sub_frame_1,
-            text="Volver",
-            command=self.controlador.regresar_destinos,
-            # width=5,
-            # height=2,
-            font=("Arial", 10, "bold"),
-            # bg="blue",
-            # fg="white",
-        )
-        boton_regresar.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
-
-
-        # # Configurar las columnas del sub_frame para que tengan el mismo peso
-        # sub_frame.grid_columnconfigure(0, weight=1)
-        # sub_frame.grid_columnconfigure(1, weight=1)
-        # sub_frame.grid_columnconfigure(2, weight=1)
+        if info_actividad == "":
+            info_actividad ='No hay actividades programadas'
+        self.destino_actividades_label.configure(text=f"{info_actividad}")
 
 
     
