@@ -1,16 +1,81 @@
 [
-	{
-		"id_ruta": 1,
-		"nombre_ruta": "Ruta Gastronómica Mediterránea",
-		"destinos": [2, 5]
-	},
-	{
-		"id_ruta": 2,
-		"nombre_ruta": "Ruta de Sabores Exóticos",
-		"destinos": [4, 8, 10]
-	}
+    {
+        "id_ruta": 1,
+        "nombre_ruta": "Ruta Gastron\u00f3mica Mediterr\u00e1nea",
+        "destinos": [
+            2,
+            5,
+            6,
+            10,
+            8,
+            7,
+            11,
+            3
+        ]
+    },
+    {
+        "id_ruta": 2,
+        "nombre_ruta": "Ruta de Sabores Ex\u00f3ticos",
+        "destinos": [
+            4,
+            8,
+            10,
+            1,
+            7,
+            11,
+            6,
+            3,
+            2
+        ]
+    },
+    {
+        "id_ruta": 3,
+        "nombre_ruta": "tu ruta es mi ruta",
+        "destinos": [
+            6,
+            3
+        ]
+    },
+    {
+        "id_ruta": 4,
+        "nombre_ruta": "esta es una nueva ruta",
+        "destinos": [
+            2,
+            3,
+            5
+        ]
+    },
+    {
+        "id_ruta": 5,
+        "nombre_ruta": "ruta 5",
+        "destinos": [
+            5,
+            9,
+            3
+        ]
+    },
+    {
+        "id_ruta": 6,
+        "nombre_ruta": "ruta6",
+        "destinos": [
+            4,
+            9,
+            8,
+            2
+        ]
+    },
+    {
+        "id_ruta": 7,
+        "nombre_ruta": "ruta 7",
+        "destinos": [
+            2
+        ]
+    },
+    {
+        "id_ruta": 8,
+        "nombre_ruta": "ruta 9",
+        "destinos": [
+            7
+        ]
+    }
 ]
-
-
-
-    

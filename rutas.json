@@ -1,0 +1,25 @@
+[
+    {
+        "id_ruta": 1,
+        "nombre_ruta": "Ruta Gastron\u00f3mica Mediterr\u00e1nea",
+        "destinos": [
+            2,
+            5,
+            3
+        ]
+    },
+    {
+        "id_ruta": 2,
+        "nombre_ruta": "Ruta de Sabores Ex\u00f3ticos",
+        "destinos": [
+            4,
+            8,
+            10
+        ]
+    },
+    {
+        "id_ruta": 3,
+        "nombre_ruta": "mi ruta es tu ruta",
+        "destinos": []
+    }
+]
