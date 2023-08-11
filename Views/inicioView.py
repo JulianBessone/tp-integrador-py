@@ -62,13 +62,13 @@ class InicioView(ctk.CTkFrame):
 
         # Botón para realizar la búsqueda
         self.boton_buscar = ctk.CTkButton(
-    self,
-    text="Buscar destino",
-    width=150,  # Ajustar el ancho del botón
-    height=30,  # Ajustar la altura del botón
-    command=lambda: self.controlador.buscar_restaurantes(
-        self.input_buscar.get()
-            ),
+            self,
+            text="Buscar destino",
+            width=150,  # Ajustar el ancho del botón
+            height=30,  # Ajustar la altura del botón
+            command=lambda: self.controlador.buscar_restaurantes(
+                self.input_buscar.get()
+                    ),
         )
         self.boton_buscar.configure(fg_color='#FF5722')
 

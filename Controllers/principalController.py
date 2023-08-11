@@ -68,7 +68,7 @@ class Aplicacion(ctk.CTk):  # le paso tk a la app para que tenga una interfas gr
         ##VISTAS
         self.vista_inicio = InicioView(self, controladorInicio, destinos, ubicaciones)
         # A la vista de inicio le paso el controlador de su vista y la data de destinos.
-        self.vista_resultados_busqueda = ResultadosBusquedaView(self, destinos)
+        self.vista_resultados_busqueda = ResultadosBusquedaView(self, destinos, ubicaciones)
         self.vista_reviews = ReviewsVista(self, controladorReview, reviews, destinos, usuarios)
         self.vista_cargar_review = CreateReview(self, controladorReview, reviews, destinos, usuarios)
         self.vista_destinos = DestinosView(self, controladorDestinos, destinos, ubicaciones)
